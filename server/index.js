@@ -1,38 +1,38 @@
-'use strict';
+"use strict";
 
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const morgan = require("morgan");
 
 const PORT = 8000;
 
 express()
   .use(function (req, res, next) {
     res.header(
-      'Access-Control-Allow-Methods',
-      'OPTIONS, HEAD, GET, PUT, POST, DELETE'
+      "Access-Control-Allow-Methods",
+      "OPTIONS, HEAD, GET, PUT, POST, DELETE"
     );
     res.header(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept'
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
     );
     next();
   })
-  .use(morgan('tiny'))
-  .use(express.static('./server/assets'))
+  .use(morgan("tiny"))
+  .use(express.static("./server/assets"))
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
-  .use('/', express.static(__dirname + '/'))
+  .use("/", express.static(__dirname + "/"))
 
   // test endpoint
-  .get('/', (req, res) => {
-    res.send('node server');
+  .get("/", (req, res) => {
+    res.send("node server");
   })
 
   // this is our catch all endpoint.
-  .get('*', (req, res) => {
+  .get("*", (req, res) => {
     res.status(404).json({
       status: 404,
-      message: 'This is obviously not what you are looking for.',
+      message: "This is obviously not what you are looking for.",
     });
   })
 
