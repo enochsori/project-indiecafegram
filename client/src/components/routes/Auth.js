@@ -252,7 +252,7 @@ const InputName = styled.input`
   border: none;
   border-radius: 5px;
   padding: 0 10px;
-  height: 30px;
+  height: 35px;
   width: 18rem;
 `;
 
@@ -261,7 +261,7 @@ const InputForEmail = styled.input`
   border: none;
   border-radius: 5px;
   padding: 0 10px;
-  height: 30px;
+  height: 35px;
   width: 18rem;
 `;
 const InputForPassword = styled.input`
@@ -269,7 +269,7 @@ const InputForPassword = styled.input`
   border: none;
   border-radius: 5px;
   padding: 0 10px;
-  height: 30px;
+  height: 35px;
   width: 18rem;
 `;
 
@@ -280,11 +280,16 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 5px;
   color: #fff;
-  height: 30px;
+  font-weight: bold;
+  height: 35px;
   width: 18rem;
   margin-bottom: 30px;
+  transition: all 300ms ease-in;
   cursor: pointer;
   &:hover {
+    background: #c4c1e0;
+    color: black;
+    font-weight: bold;
   }
 `;
 const OtherOptionTile = styled.div`
@@ -292,6 +297,9 @@ const OtherOptionTile = styled.div`
 `;
 const OtherOptionWrapper = styled.div`
   display: flex;
+  width: 18rem;
+  justify-content: space-between;
+  /* border: 1px solid red; */
 `;
 
 const ViaGoogle = styled.button`
@@ -301,9 +309,8 @@ const ViaGoogle = styled.button`
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 80px;
+  width: 33%;
   border-radius: 5px;
-  margin-right: 10px;
 `;
 const ViaTwitter = styled.button`
   background-color: #1da1f2;
@@ -312,9 +319,9 @@ const ViaTwitter = styled.button`
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 80px;
+  width: 33%;
   border-radius: 5px;
-  margin-right: 10px;
+
   color: #fff;
 `;
 const StyledAiOutlineTwitter = styled(AiOutlineTwitter)`
@@ -328,9 +335,8 @@ const ViaGithub = styled.button`
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 80px;
+  width: 33%;
   border-radius: 5px;
-  margin-right: 10px;
 `;
 
 const GoogleTitle = styled.span`

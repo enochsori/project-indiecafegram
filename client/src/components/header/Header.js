@@ -6,7 +6,9 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.div`
-  height: 150px;
-  border: 1px solid red;
-  
+  height: 100px;
+  border-bottom: 1px solid red;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `;

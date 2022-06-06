@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
 const Sidebar = () => {
-  return <Wrapper>Sidebar</Wrapper>;
+  return (
+    <Wrapper>
+      <ContentWrapper>Sidebar</ContentWrapper>
+    </Wrapper>
+  );
 };
 
 export default Sidebar;
@@ -9,7 +13,12 @@ export default Sidebar;
 const Wrapper = styled.div`
   width: 30%;
   height: 100vh;
+  position: relative;
   border: 1px solid blue;
+`;
+
+const ContentWrapper = styled.div`
   position: sticky;
-  top: 0;
+  top: 100px;
+  border: 1px solid blue;
 `;

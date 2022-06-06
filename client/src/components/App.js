@@ -15,8 +15,8 @@ function App() {
           <Router>
             <Header />
             <LayoutSidebarAndMainWrapper>
-              <Sidebar />
               <AppRouter />
+              <Sidebar />
             </LayoutSidebarAndMainWrapper>
           </Router>
         </Wrapper>
