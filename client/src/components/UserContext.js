@@ -42,8 +42,9 @@ const UserProvider = ({ children }) => {
               'Content-Type': 'application/json',
             },
           });
-          const data = await res.json();
+          const { data } = await res.json();
           console.log(data);
+          setCurrentUser(data);
         } catch (err) {
           window.alert('Serverside Error');
         }
