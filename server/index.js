@@ -2,6 +2,7 @@
 
 const express = require("express");
 const morgan = require("morgan");
+const { getCurrentUser, registerNewUser } = require("./handler");
 
 const PORT = 8000;
 
@@ -24,9 +25,12 @@ express()
   .use("/", express.static(__dirname + "/"))
 
   // test endpoint
-  .get("/", (req, res) => {
+  .get("/api/test", (req, res) => {
     res.send("node server");
   })
+
+  // Get current user info
+  .get("/api/users/:id", getCurrentUser)
 
   // this is our catch all endpoint.
   .get("*", (req, res) => {
@@ -35,5 +39,8 @@ express()
       message: "This is obviously not what you are looking for.",
     });
   })
+
+  // Register a new user into user database
+  .post("/api/new-user", registerNewUser)
 
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));

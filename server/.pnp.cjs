@@ -33,6 +33,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["dotenv", "npm:16.0.1"],\
             ["express", "npm:4.18.1"],\
             ["mongodb", "npm:4.6.0"],\
             ["morgan", "npm:1.10.0"],\
@@ -792,6 +793,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["dot-prop", "npm:5.3.0"],\
             ["is-obj", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv", [\
+        ["npm:16.0.1", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.1-d99e72bb95-f459ffce07.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2379,6 +2389,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["server", "workspace:."],\
+            ["dotenv", "npm:16.0.1"],\
             ["express", "npm:4.18.1"],\
             ["mongodb", "npm:4.6.0"],\
             ["morgan", "npm:1.10.0"],\
