@@ -4,13 +4,12 @@ import { GoogleMap, Marker } from '@react-google-maps/api';
 
 const Map = () => {
   const [map, setMap] = useState(null);
+  const center = useMemo(() => ({ lat: 45.501689, lng: -73.567256 }), []);
   const onLoad = useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
     setMap(map);
   }, []);
-
-  const center = useMemo(() => ({ lat: 45.501689, lng: -73.567256 }), []);
 
   const containerStyle = {
     width: '100%',
@@ -24,11 +23,11 @@ const Map = () => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom={10}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
+      zoom={12}
+      // onLoad={onLoad}
+      // onUnmount={onUnmount}
     >
-      {/* <Marker position={center} /> */}
+      <Marker position={center} />
     </GoogleMap>
   );
 };
