@@ -28,7 +28,7 @@ const Map = () => {
       onLoad={onLoad}
       onUnmount={onUnmount}
     >
-      <Marker position={center} />
+      {/* <Marker position={center} /> */}
     </GoogleMap>
   );
 };
