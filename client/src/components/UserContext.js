@@ -1,32 +1,42 @@
+import { onAuthStateChanged } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
 import app from '../components/authentication/firebase';
+import { getAuth } from 'firebase/auth';
 
 export const UserContext = createContext(null);
 
 const UserProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState();
+  const [state, setState] = useState('loading');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
   const [newUser, setNewUser] = useState(null);
+  const auth = getAuth();
 
-  // [GET] Get current user info from databas
-  // useEffect(() => {
-  //   if (window.sessionStorage.getItem('userId')) {
-  //     isLoggedIn(true);
-  //     const id = window.sessionStorage.getItem('userId');
-  //     const fetchUserInfo = async () => {
-  //       try {
-  //         const res = await fetch(`/api/users/${id}`);
-  //         const { data } = await res.json();
-  //         console.log(data);
-  //         setCurrentUser(data);
-  //       } catch (err) {
-  //         console.log('database error');
-  //       }
-  //     };
-  //     fetchUserInfo();
-  //   }
-  // }, []);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // console.log(user.uid);
+        setIsLoggedIn(true);
+        if (user.uid) {
+          const fetchUserInfo = async () => {
+            try {
+              const res = await fetch(`/api/users/${user.uid}`);
+              const { data } = await res.json();
+              // console.log(data);
+              setCurrentUser(data);
+            } catch (err) {
+              console.log('database error');
+            }
+          };
+          fetchUserInfo();
+        }
+      } else {
+        setIsLoggedIn(false);
+      }
+      setState('idle');
+    });
+  }, []);
 
   // [POST] Register new user info into database
   useEffect(() => {

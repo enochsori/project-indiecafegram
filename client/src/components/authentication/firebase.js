@@ -7,6 +7,7 @@ const {
   REACT_APP_STORAGE_BUCKET,
   REACT_APP_MESSAGING_SENDER_ID,
   REACT_APP_FIREBASE_APP_ID,
+  REACT_APP_GOOGLE_MAPS_API_KEY,
 } = process.env;
 
 // Your web app's Firebase configuration

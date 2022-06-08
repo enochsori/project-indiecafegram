@@ -13,17 +13,18 @@ const client = new MongoClient(MONGO_URI, options);
 
 // Get current user info from database
 const getCurrentUser = async (req, res) => {
-  const _id = req.params;
+  const { id } = req.params;
+
   try {
     await client.connect();
     const db = await client.db("indiecafegram");
-    const data = await db.collection("users").find({ _id }).toArray();
+    const data = await db.collection("users").find({ _id: id }).toArray();
 
     client.close();
 
     res.status(200).json({
       status: 200,
-      data: data,
+      data,
     });
   } catch (err) {
     res.status(400).json({

@@ -7,11 +7,15 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  GoogleAuthProvider,
+  TwitterAuthProvider,
+  signInWithPopup,
+  FacebookAuthProvider,
 } from 'firebase/auth';
 
 import { FcGoogle } from 'react-icons/fc';
 import { AiOutlineTwitter } from 'react-icons/ai';
-import { AiOutlineGithub } from 'react-icons/ai';
+import { AiFillFacebook } from 'react-icons/ai';
 import cafe from '../../images/cafe.jpeg';
 
 const Auth = () => {
@@ -19,7 +23,8 @@ const Auth = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [isSignup, setIsSignup] = useState(true);
-  const { setNewUser, setIsLoggedIn } = useContext(UserContext);
+  const [error, setError] = useState(null);
+  const { setNewUser, setIsLoggedIn, setUserId } = useContext(UserContext);
 
   const auth = getAuth();
 
@@ -33,17 +38,7 @@ const Auth = () => {
     setIsSignup(!isSignup);
   };
 
-  // **************************************
-  // Basic functions for Authentication
-
-  // **************************************
-
-  // User state handler to check if a user logged in or not
-
   const signupHandler = async (event) => {
-    // When new user sign up, firebase auth. graps user's info and save it inside its own db
-    // Apart from that, we will grap user info to use our own db
-    // And when user successfully sign up, the user will be logged in automatically.
     event.preventDefault();
     try {
       const result = await createUserWithEmailAndPassword(
@@ -53,9 +48,6 @@ const Auth = () => {
       );
 
       setNewUser({ name, email, _id: result.user.uid });
-      // Save user id into session storage for keeping user login state
-      await window.sessionStorage.setItem('userId', result.user.uid);
-
       // Change Login state
       onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -66,7 +58,9 @@ const Auth = () => {
         }
       });
     } catch (err) {
-      window.alert(err.code);
+      setError(err);
+      setIsLoggedIn(false);
+      isSignupToggleHandler();
     }
   };
 
@@ -74,19 +68,35 @@ const Auth = () => {
     event.preventDefault();
     try {
       // Firebase auth. checks user validation. (is member?)
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      await window.sessionStorage.setItem('userId', result.user.uid);
+      await signInWithEmailAndPassword(auth, email, password);
 
       // Change Login state
       onAuthStateChanged(auth, (user) => {
         if (user) {
           console.log(user);
           setIsLoggedIn(true);
+          setUserId(user.uid);
         }
       });
     } catch (err) {
+      setError(err);
       setIsLoggedIn(false);
       isSignupToggleHandler();
+    }
+  };
+
+  const googleLoginHandler = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const credentail = GoogleAuthProvider.credentialFromResult(result);
+      const token = credentail.accessToken;
+      const user = result.user;
+      console.log(user);
+      setIsLoggedIn(true);
+      setNewUser({ name: null, email: user.email, _id: user.uid });
+    } catch (err) {
+      setError(err);
     }
   };
 
@@ -98,9 +108,7 @@ const Auth = () => {
 
           <LogincontentWrapper>
             <Form onSubmit={isSignup ? loginHandler : signupHandler}>
-              <CaptionForGreeting>
-                welcome to timesand watches
-              </CaptionForGreeting>
+              <CaptionForGreeting>welcome to Indicafegram</CaptionForGreeting>
 
               {isSignup && (
                 <OptionsWrapper>
@@ -150,21 +158,12 @@ const Auth = () => {
               {' '}
               ---------------- or ----------------{' '}
             </OtherOptionTile>
+
             <OtherOptionWrapper>
-              <ViaGoogle>
+              <ViaGoogle onClick={googleLoginHandler}>
                 <FcGoogle />
                 <GoogleTitle>Google</GoogleTitle>
               </ViaGoogle>
-
-              <ViaTwitter>
-                <StyledAiOutlineTwitter />
-                <TwitterTitle>Twitter</TwitterTitle>
-              </ViaTwitter>
-
-              <ViaGithub>
-                <AiOutlineGithub />
-                <GithubTitle>GitHub</GithubTitle>
-              </ViaGithub>
             </OtherOptionWrapper>
           </LogincontentWrapper>
         </Wrapper>
@@ -223,7 +222,7 @@ const Form = styled.form`
 const CaptionForGreeting = styled.span`
   text-transform: uppercase;
   color: gray;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 0.8rem;
 `;
 const OptionsWrapper = styled.div`
@@ -303,48 +302,18 @@ const OtherOptionWrapper = styled.div`
 `;
 
 const ViaGoogle = styled.button`
+  cursor: pointer;
   background-color: #fff;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 40px;
-  width: 33%;
-  border-radius: 5px;
-`;
-const ViaTwitter = styled.button`
-  background-color: #1da1f2;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 33%;
-  border-radius: 5px;
-
-  color: #fff;
-`;
-const StyledAiOutlineTwitter = styled(AiOutlineTwitter)`
-  color: #fff;
-`;
-
-const ViaGithub = styled.button`
-  background-color: #fff;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  width: 33%;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 30px;
+  font-size: 1rem;
 `;
 
 const GoogleTitle = styled.span`
-  margin-left: 5px;
-`;
-const TwitterTitle = styled.span`
-  margin-left: 5px;
-`;
-const GithubTitle = styled.span`
   margin-left: 5px;
 `;

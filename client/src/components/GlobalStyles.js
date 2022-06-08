@@ -35,6 +35,7 @@ export default createGlobalStyle`
     html, body {
         max-width: 100vw;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        background-color: #FAFAFA;
     }
 
     /* http://meyerweb.com/eric/tools/css/reset/

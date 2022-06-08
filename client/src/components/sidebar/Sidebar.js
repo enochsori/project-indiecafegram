@@ -11,7 +11,7 @@ const Sidebar = () => {
 export default Sidebar;
 
 const Wrapper = styled.div`
-  width: 30%;
+  width: 40%;
   height: 100vh;
   position: relative;
   border: 1px solid blue;
@@ -19,6 +19,6 @@ const Wrapper = styled.div`
 
 const ContentWrapper = styled.div`
   position: sticky;
-  top: 100px;
+  top: 70px;
   border: 1px solid blue;
 `;

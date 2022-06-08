@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["dotenv", "npm:16.0.1"],\
             ["express", "npm:4.18.1"],\
-            ["mongodb", "npm:4.6.0"],\
+            ["mongodb", "npm:4.7.0"],\
             ["morgan", "npm:1.10.0"],\
             ["nodemon", "npm:2.0.16"],\
             ["uuid", "npm:8.3.2"]\
@@ -107,16 +107,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-keyv-npm-3.1.4-a8082ea56b-e009a2bfb5.zip/node_modules/@types/keyv/",\
           "packageDependencies": [\
             ["@types/keyv", "npm:3.1.4"],\
-            ["@types/node", "npm:17.0.39"]\
+            ["@types/node", "npm:17.0.40"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@types/node", [\
-        ["npm:17.0.39", {\
-          "packageLocation": "./.yarn/cache/@types-node-npm-17.0.39-3285e4fbfd-1258561d0a.zip/node_modules/@types/node/",\
+        ["npm:17.0.40", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-17.0.40-fecd5890a0-e3b2fe8766.zip/node_modules/@types/node/",\
           "packageDependencies": [\
-            ["@types/node", "npm:17.0.39"]\
+            ["@types/node", "npm:17.0.40"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -126,7 +126,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-responselike-npm-1.0.0-85dd08af42-e99fc7cc62.zip/node_modules/@types/responselike/",\
           "packageDependencies": [\
             ["@types/responselike", "npm:1.0.0"],\
-            ["@types/node", "npm:17.0.39"]\
+            ["@types/node", "npm:17.0.40"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -145,7 +145,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-whatwg-url-npm-8.2.1-718fa51acd-975987a9ca.zip/node_modules/@types/whatwg-url/",\
           "packageDependencies": [\
             ["@types/whatwg-url", "npm:8.2.1"],\
-            ["@types/node", "npm:17.0.39"],\
+            ["@types/node", "npm:17.0.40"],\
             ["@types/webidl-conversions", "npm:6.1.1"]\
           ],\
           "linkType": "HARD"\
@@ -1801,10 +1801,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["mongodb", [\
-        ["npm:4.6.0", {\
-          "packageLocation": "./.yarn/cache/mongodb-npm-4.6.0-5962a2017f-aa2a584fdb.zip/node_modules/mongodb/",\
+        ["npm:4.7.0", {\
+          "packageLocation": "./.yarn/cache/mongodb-npm-4.7.0-d0a46888e7-6c8ddf1d14.zip/node_modules/mongodb/",\
           "packageDependencies": [\
-            ["mongodb", "npm:4.6.0"],\
+            ["mongodb", "npm:4.7.0"],\
             ["bson", "npm:4.6.4"],\
             ["denque", "npm:2.0.1"],\
             ["mongodb-connection-string-url", "npm:2.5.2"],\
@@ -2391,7 +2391,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["server", "workspace:."],\
             ["dotenv", "npm:16.0.1"],\
             ["express", "npm:4.18.1"],\
-            ["mongodb", "npm:4.6.0"],\
+            ["mongodb", "npm:4.7.0"],\
             ["morgan", "npm:1.10.0"],\
             ["nodemon", "npm:2.0.16"],\
             ["uuid", "npm:8.3.2"]\
