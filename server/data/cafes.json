@@ -22,211 +22,211 @@
     "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPEGmK3Z7P8NkU9kWcc6wNBEOHJGdNyksuwdTRx=w426-h240-k-no"
   },
   {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
+    "name": "Pikolo Espresso Bar",
+    "webSite": "http://pikoloespresso.com/",
+    "phone": "+15145086800",
+    "_id": "+15145086800",
+    "address": "3418b Park Ave, Montreal, Quebec H2X 2H5",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNEEY8hOV2nx-pfExO30MolSrA_53LfdIOkgXUh=w512-h240-k-no"
+  },
+  {
+    "name": "nsiders - Café & Cowork Crescent",
+    "webSite": "https://www.insiderscafe.com/",
+    "phone": "+15149802015",
+    "_id": "+15149802015",
+    "address": "2067 Crescent St #205, Montreal, Quebec H3G 2C1",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNVd0bv4kl4enDwmEhio3o09x10J8TSuq0bDIgr=w408-h272-k-no"
+  },
+  {
+    "name": "Cafe Aunja",
+    "webSite": "http://aunja.com/",
+    "phone": "+15149148337",
+    "_id": "+15149148337",
+    "address": "1448 Sherbrooke St W, Montreal, Quebec H3G 1K4",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMkCsf1P8G4sb4khMH-q2fcGCMnmyUKxi-IIq-7=w426-h240-k-no"
+  },
+  {
+    "name": "Anticafe Montreal - Place Des Arts",
+    "webSite": "http://instagram.com/anticafe_montreal",
+    "phone": "+15145009045",
+    "_id": "+15145009045",
+    "address": "294 Saint-Catherine St W, Montreal, Quebec H2X 2A1",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipN5dNXypxwkac7T8yGIVNTV-Tae5ZOBEwudeLRO=w493-h240-k-no"
+  },
+  {
+    "name": "Crew Collective & Cafe",
+    "webSite": "https://crewcollectivecafe.com/",
+    "phone": "+15142857095",
+    "_id": "+15142857095",
+    "address": "360 Rue Saint-Jacques, Montréal, QC H2Y 1P5",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPDT_XSlp0XLdH8VFNHdxZ69iU9zFatZkS0p2Ck=w408-h509-k-no"
+  },
+  {
+    "name": "Café 1880",
+    "webSite": "http://www.cafe1880.com/",
+    "phone": "+15145077225",
+    "_id": "+15145077225",
+    "address": "1186 Saint Denis St, Montreal, Quebec H2X 3J5",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMGHQ6aBRhuUzdWgawKK44-bKxkdVhxQ0GRch5f=w408-h306-k-no"
+  },
+  {
+    "name": "Café Olimpico - Mile End",
+    "webSite": "http://www.cafeolimpico.com/",
+    "phone": "+15144950746",
+    "_id": "+15144950746",
+    "address": "124 Rue Saint- Viateur O, Montréal, QC H2T 2L1",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO-vtiL1XX2BpBpLewXEE8J1gcgjXMLnawL-Goy=w408-h458-k-no"
+  },
+  {
+    "name": "La Finca café & marché local",
+    "webSite": "http://www.lafinca.ca/",
+    "phone": "+15149038911",
+    "_id": "+15149038911",
+    "address": "1067 Rue de Bleury, Montréal, QC H2Z 1N1",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipM5L1jqBJq2tSX89TqYFOUs7xg_cNVCbSuHRmZw=w408-h254-k-no"
+  },
+  {
+    "name": "Cafe Myriade",
+    "webSite": "https://cafemyriade.com/",
+    "phone": "+15149391717",
+    "_id": "+15149391717",
+    "address": "1432 Mackay St, Montreal, Quebec H3G 2H7",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMBfhLTSNg8bHJz9c-MsUnaR8-cY_y7_c5OC6OL=w426-h240-k-no"
+  },
+  {
+    "name": "180g café - disquaire",
+    "webSite": "https://www.facebook.com/le180g",
+    "phone": "+14382905002",
+    "_id": "+14382905002",
+    "address": "5866 Av. De Lorimier, Montréal, QC H2G 2N9",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMb2cbLefybQRkX7-c79Chs80UpQkBZ7gx4UgHb=w731-h240-k-no"
+  },
+  {
+    "name": "CARDYNAL - Espresso Bar",
+    "webSite": "https://www.facebook.com/CardynalEspresso/",
+    "phone": "+15144192765",
+    "_id": "+15144192765",
+    "address": "1558 Mont-Royal Ave E, Montreal, Quebec H2J 1Z2",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPTDQxWtVIT-voHIiszrBeNaBOL83ZT8x0H_Xtd=w408-h544-k-no"
+  },
+  {
+    "name": "Café Pista",
+    "webSite": "http://www.cafepista.com/",
+    "phone": "+15149038257",
+    "_id": "+15149038257",
+    "address": "500 Rue Beaubien E, Montréal, QC H2S 1S5",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMKJ8uubJZLgC4L_9cwFKpDdMLQK6kFY9Moq3WP=w519-h240-k-no"
+  },
+  {
+    "name": "Céramic Café Studio Montréal",
+    "webSite": "https://leccs.com/boutique",
+    "phone": "+15148481119",
+    "_id": "+15148481119",
+    "address": "4338 Saint Denis St, Montreal, Quebec H2J 2K8",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNCg0zykSwCmVJtXe1KkHXvUktLTH9Ty3uZi8fP=w408-h272-k-no"
+  },
+  {
+    "name": "Café SAT",
+    "webSite": "http://sat.qc.ca/en/sat-cafe",
+    "phone": "+15148442033",
+    "_id": "+15148442033",
+    "address": "6 Pl. du Marché, Montréal, QC H2X 2S6",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMqz9Kl2UHjVO5vBVPft2WJh3gqE1kwWqytWxCt=w408-h306-k-no"
+  },
+  {
+    "name": "September Cafe",
+    "webSite": "http://www.septembersurf.com/",
+    "phone": "+15149345000",
+    "_id": "+15149345000",
+    "address": "2471 Notre-Dame St W, Montreal, Quebec H3J 1N6",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMDhpYCyXh5yrrUSu_DDNuYHiVWofgPzZ82qOtG=w408-h272-k-no"
+  },
+  {
+    "name": "Café Odessa",
+    "webSite": "https://facebook.com/cafeodessa/",
+    "phone": "+15145156917",
+    "_id": "+15145156917",
+    "address": "65 Rue Beaubien E, Montréal, QC H2S 1R1",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPmh8F9ROD-W71PJ_Gdk6MsjZfKyuJkRefc7a-s=w408-h250-k-no"
+  },
+  {
+    "name": "Shaughnessy Café",
+    "webSite": "http://shaughnessycafe.com/",
+    "phone": "+14383869890",
+    "_id": "+14383869890",
+    "address": "1455 Rue Lambert-Closse, Montreal, Quebec H3H 1Z5",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPXdU6U02xKwfwyFTjIpqJ62ZH6_X7hKTE2qR-T=w426-h240-k-no"
+  },
+  {
+    "name": "Café Pic Macaya",
+    "webSite": "http://cafepicmacaya.com/",
+    "phone": "+14509349955",
+    "_id": "+14509349955",
+    "address": "345 Bd Chomedey #1, Laval, Quebec H7V 3S7",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMf13MliuHtXwaZZc79foh_w1WQvAbqOI6s83Et=w426-h240-k-no"
+  },
+  {
+    "name": "Casa Del Popolo",
+    "webSite": "https://casadelpopolo.com/",
+    "phone": "+15142840122",
+    "_id": "+15142840122",
+    "address": "4873 St Laurent Blvd, Montreal, Quebec H2T 1R6",
+    "comment": [{}],
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO3cMmOKh7omodzZkDEG2vGXWBZT3KDAavydfvb=w408-h544-k-no"
+  },
+  {
+    "name": "diff.",
+    "webSite": "http://cafedifferance.ca/",
+    "phone": "+15144195415",
+    "_id": "+15144195415",
+    "address": "449 Av. Viger O, Montréal, QC H2Z 1G6",
     "comment": [{}],
     "imgSrc": ""
   },
   {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
+    "name": "Tunnel Espresso Bar",
+    "webSite": "http://www.tunnelespressobar.ca/",
+    "phone": "+15148825288",
+    "_id": "+15148825288",
+    "address": "Time Out Market, Montreal, Quebec H3B 2Y5",
     "comment": [{}],
-    "imgSrc": ""
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipOhF2wuJnzhUQtjifEj96Z1NV08XqcrTLcuR0fg=w408-h386-k-no"
   },
   {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
+    "name": "Café Humble Lion (Sherbrooke)",
+    "webSite": "http://shop.humblelion.com/",
+    "phone": "+15148445466",
+    "_id": "+15148445466",
+    "address": "904 Sherbrooke St W, Montreal, Quebec H3A 1G3",
     "comment": [{}],
-    "imgSrc": ""
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPxWaTGJ6P4FchpTZONBRWS-boHwFNsHcusWPrX=w426-h240-k-no"
   },
   {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
+    "name": "MELK Café Monkland",
+    "webSite": "http://melk-cafe.myshopify.com/",
+    "phone": "+15145085789",
+    "_id": "+15145085789",
+    "address": "5612 Monkland Ave, Montreal, Quebec H4A 1E3",
     "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
-  },
-  {
-    "name": "",
-    "webSite": "",
-    "phone": "",
-    "_id": "",
-    "address": "",
-    "comment": [{}],
-    "imgSrc": ""
+    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO8WozM9BaB2x6wAjpvaBaCVqT9YECAwZ6PFMr5=w408-h271-k-no"
   },
   {
     "name": "",
