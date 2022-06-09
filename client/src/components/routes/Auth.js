@@ -99,7 +99,7 @@ const Auth = () => {
       setError(err);
     }
   };
-
+  const a = '/images/001.jpeg';
   return (
     <Modalwrapper>
       <ModalBackground>

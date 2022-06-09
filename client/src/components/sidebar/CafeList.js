@@ -3,14 +3,13 @@ import styled from 'styled-components';
 const CafeList = ({ name, address, src }) => {
   return (
     <CafeListItem>
-      <RightWrapper>
+      <ContentsWrapper>
         <Name>{name}</Name>
-        <LikesWrapper></LikesWrapper>
         <Address>{address}</Address>
-      </RightWrapper>
-      <LeftWrapper>
+      </ContentsWrapper>
+      <ImageWrapper>
         <Image src={src} />
-      </LeftWrapper>
+      </ImageWrapper>
     </CafeListItem>
   );
 };
@@ -19,21 +18,35 @@ export default CafeList;
 
 const CafeListItem = styled.li`
   display: flex;
-  height: 120px;
+  height: 150px;
   border-bottom: 1px solid lightgray;
-  justify-content: space-between;
-  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  transition: all 100ms ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+  }
 `;
-const RightWrapper = styled.div`
-  width: 75%;
+const ContentsWrapper = styled.div`
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
 `;
-const LeftWrapper = styled.div`
+const ImageWrapper = styled.div`
   overflow: hidden;
   width: 20%;
-  height: 95%;
+  height: 65%;
   border-radius: 10px;
 `;
-const Name = styled.span``;
+const Name = styled.span`
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
 const LikesWrapper = styled.div``;
-const Address = styled.span``;
+const Address = styled.span`
+  color: rgba(0, 0, 0, 0.7);
+`;
 const Image = styled.img``;

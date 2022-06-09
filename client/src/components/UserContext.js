@@ -9,9 +9,10 @@ const UserProvider = ({ children }) => {
   const [state, setState] = useState('loading');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
-
   const [newUser, setNewUser] = useState(null);
   const auth = getAuth();
+
+  console.log('current user is:', currentUser);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -23,7 +24,6 @@ const UserProvider = ({ children }) => {
             try {
               const res = await fetch(`/api/users/${user.uid}`);
               const { data } = await res.json();
-              // console.log(data);
               setCurrentUser(data);
             } catch (err) {
               console.log('database error');

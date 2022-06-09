@@ -17,9 +17,7 @@ const AppRouter = () => {
         {isLoggedIn ? (
           <>
             <Route path='/' element={<Home />}></Route>
-
             <Route path='/profile' element={<Profile />}></Route>
-
             <Route path='/edit-profile' element={<EditProfile />}></Route>
           </>
         ) : (
@@ -33,6 +31,5 @@ const AppRouter = () => {
 export default AppRouter;
 
 const Wrapper = styled.div`
-  /* border: 1px solid green; */
-  width: 100%; ;
+  width: 100%;
 `;

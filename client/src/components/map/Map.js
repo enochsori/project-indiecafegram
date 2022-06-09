@@ -12,7 +12,8 @@ const Map = () => {
   }, []);
 
   const containerStyle = {
-    width: '100%',
+    
+    width: '900px',
     height: '1000px',
   };
   const onUnmount = useCallback((map) => {
@@ -20,20 +21,24 @@ const Map = () => {
   }, []);
 
   return (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={12}
-      // onLoad={onLoad}
-      // onUnmount={onUnmount}
-    >
-      <Marker position={center} />
-    </GoogleMap>
+    <Wrapper>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={14}
+        // onLoad={onLoad}
+        // onUnmount={onUnmount}
+      >
+        <Marker position={center} />
+      </GoogleMap>
+    </Wrapper>
   );
 };
 
 export default Map;
 
-const StyledMarker = styled(Marker)`
-  font-size: 200px;
+const Wrapper = styled.div`
+  width: 900px;
+  position: fixed;
+  top: 70px;
 `;

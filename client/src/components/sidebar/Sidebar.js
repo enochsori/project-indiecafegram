@@ -31,7 +31,7 @@ const Sidebar = () => {
 export default Sidebar;
 
 const Wrapper = styled.div`
-  width: 40%;
+  width: 30%;
   height: 100vh;
   margin-top: 70px;
 `;

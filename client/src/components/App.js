@@ -54,7 +54,6 @@ const WindowSetting = styled.div`
 const Wrapper = styled.div`
   width: 1360px;
   height: 100vh;
-  position: relative;
 `;
 
 const LayoutSidebarAndMainWrapper = styled.div`

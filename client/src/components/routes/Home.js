@@ -14,13 +14,8 @@ const Home = () => {
   console.log(isLoaded);
 
   return <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
-
-  // <Wrapper>Home</Wrapper>;
 };
 
 export default Home;
 
-const Wrapper = styled.div`
-  position: fixed;
-  top: 70px;
-`;
+const Wrapper = styled.div``;

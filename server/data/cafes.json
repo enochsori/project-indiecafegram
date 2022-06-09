@@ -2,7 +2,7 @@
   {
     "name": "Café Pic Macaya",
     "webSite": "http://cafepicmacaya.com/",
-    "imgSrc": "https://www.google.com/maps/place/Caf%C3%A9+Pic+Macaya/@45.5389524,-73.8734232,12z/data=!4m8!1m2!2m1!1sindie+cafe+in+Montreal!3m4!1s0x4cc923d6d49233ed:0x7a74dd3f030cae3b!8m2!3d45.5389524!4d-73.7333475",
+    "imgSrc": "/images/001.jpeg",
     "phone": "+14509349955",
     "_id": "+14509349955",
     "address": "345 Bd Chomedey #1, Laval, Quebec H7V 3S7",
@@ -19,7 +19,7 @@
     "_id": "+15146796037",
     "address": "19 Prince Arthur St W, Montreal, Quebec H2X 1S4",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPEGmK3Z7P8NkU9kWcc6wNBEOHJGdNyksuwdTRx=w426-h240-k-no"
+    "imgSrc": "/images/002.jpeg"
   },
   {
     "name": "Pikolo Espresso Bar",
@@ -28,7 +28,7 @@
     "_id": "+15145086800",
     "address": "3418b Park Ave, Montreal, Quebec H2X 2H5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNEEY8hOV2nx-pfExO30MolSrA_53LfdIOkgXUh=w512-h240-k-no"
+    "imgSrc": "/images/003.jpeg"
   },
   {
     "name": "nsiders - Café & Cowork Crescent",
@@ -37,7 +37,7 @@
     "_id": "+15149802015",
     "address": "2067 Crescent St #205, Montreal, Quebec H3G 2C1",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNVd0bv4kl4enDwmEhio3o09x10J8TSuq0bDIgr=w408-h272-k-no"
+    "imgSrc": "/images/004.jpeg"
   },
   {
     "name": "Cafe Aunja",
@@ -46,7 +46,7 @@
     "_id": "+15149148337",
     "address": "1448 Sherbrooke St W, Montreal, Quebec H3G 1K4",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMkCsf1P8G4sb4khMH-q2fcGCMnmyUKxi-IIq-7=w426-h240-k-no"
+    "imgSrc": "/images/005.jpeg"
   },
   {
     "name": "Anticafe Montreal - Place Des Arts",
@@ -55,7 +55,7 @@
     "_id": "+15145009045",
     "address": "294 Saint-Catherine St W, Montreal, Quebec H2X 2A1",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipN5dNXypxwkac7T8yGIVNTV-Tae5ZOBEwudeLRO=w493-h240-k-no"
+    "imgSrc": "/images/006.jpeg"
   },
   {
     "name": "Crew Collective & Cafe",
@@ -64,7 +64,7 @@
     "_id": "+15142857095",
     "address": "360 Rue Saint-Jacques, Montréal, QC H2Y 1P5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPDT_XSlp0XLdH8VFNHdxZ69iU9zFatZkS0p2Ck=w408-h509-k-no"
+    "imgSrc": "/images/007.jpeg"
   },
   {
     "name": "Café 1880",
@@ -73,7 +73,7 @@
     "_id": "+15145077225",
     "address": "1186 Saint Denis St, Montreal, Quebec H2X 3J5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMGHQ6aBRhuUzdWgawKK44-bKxkdVhxQ0GRch5f=w408-h306-k-no"
+    "imgSrc": "/images/008.jpeg"
   },
   {
     "name": "Café Olimpico - Mile End",
@@ -82,7 +82,7 @@
     "_id": "+15144950746",
     "address": "124 Rue Saint- Viateur O, Montréal, QC H2T 2L1",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO-vtiL1XX2BpBpLewXEE8J1gcgjXMLnawL-Goy=w408-h458-k-no"
+    "imgSrc": "/images/009.jpeg"
   },
   {
     "name": "La Finca café & marché local",
@@ -91,7 +91,7 @@
     "_id": "+15149038911",
     "address": "1067 Rue de Bleury, Montréal, QC H2Z 1N1",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipM5L1jqBJq2tSX89TqYFOUs7xg_cNVCbSuHRmZw=w408-h254-k-no"
+    "imgSrc": "/images/010.jpeg"
   },
   {
     "name": "Cafe Myriade",
@@ -100,7 +100,7 @@
     "_id": "+15149391717",
     "address": "1432 Mackay St, Montreal, Quebec H3G 2H7",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMBfhLTSNg8bHJz9c-MsUnaR8-cY_y7_c5OC6OL=w426-h240-k-no"
+    "imgSrc": "/images/011.jpeg"
   },
   {
     "name": "180g café - disquaire",
@@ -109,7 +109,7 @@
     "_id": "+14382905002",
     "address": "5866 Av. De Lorimier, Montréal, QC H2G 2N9",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMb2cbLefybQRkX7-c79Chs80UpQkBZ7gx4UgHb=w731-h240-k-no"
+    "imgSrc": "/images/012.jpeg"
   },
   {
     "name": "CARDYNAL - Espresso Bar",
@@ -118,7 +118,7 @@
     "_id": "+15144192765",
     "address": "1558 Mont-Royal Ave E, Montreal, Quebec H2J 1Z2",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPTDQxWtVIT-voHIiszrBeNaBOL83ZT8x0H_Xtd=w408-h544-k-no"
+    "imgSrc": "/images/013.jpeg"
   },
   {
     "name": "Café Pista",
@@ -127,7 +127,7 @@
     "_id": "+15149038257",
     "address": "500 Rue Beaubien E, Montréal, QC H2S 1S5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMKJ8uubJZLgC4L_9cwFKpDdMLQK6kFY9Moq3WP=w519-h240-k-no"
+    "imgSrc": "/images/014.jpeg"
   },
   {
     "name": "Céramic Café Studio Montréal",
@@ -136,7 +136,7 @@
     "_id": "+15148481119",
     "address": "4338 Saint Denis St, Montreal, Quebec H2J 2K8",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNCg0zykSwCmVJtXe1KkHXvUktLTH9Ty3uZi8fP=w408-h272-k-no"
+    "imgSrc": "/images/015.jpeg"
   },
   {
     "name": "Café SAT",
@@ -145,7 +145,7 @@
     "_id": "+15148442033",
     "address": "6 Pl. du Marché, Montréal, QC H2X 2S6",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMqz9Kl2UHjVO5vBVPft2WJh3gqE1kwWqytWxCt=w408-h306-k-no"
+    "imgSrc": "/images/016.jpeg"
   },
   {
     "name": "September Cafe",
@@ -154,7 +154,7 @@
     "_id": "+15149345000",
     "address": "2471 Notre-Dame St W, Montreal, Quebec H3J 1N6",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMDhpYCyXh5yrrUSu_DDNuYHiVWofgPzZ82qOtG=w408-h272-k-no"
+    "imgSrc": "/images/017.jpeg"
   },
   {
     "name": "Café Odessa",
@@ -163,7 +163,7 @@
     "_id": "+15145156917",
     "address": "65 Rue Beaubien E, Montréal, QC H2S 1R1",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPmh8F9ROD-W71PJ_Gdk6MsjZfKyuJkRefc7a-s=w408-h250-k-no"
+    "imgSrc": "/images/018.jpeg"
   },
   {
     "name": "Shaughnessy Café",
@@ -172,7 +172,7 @@
     "_id": "+14383869890",
     "address": "1455 Rue Lambert-Closse, Montreal, Quebec H3H 1Z5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPXdU6U02xKwfwyFTjIpqJ62ZH6_X7hKTE2qR-T=w426-h240-k-no"
+    "imgSrc": "/images/019.jpeg"
   },
   {
     "name": "Casa Del Popolo",
@@ -181,7 +181,7 @@
     "_id": "+15142840122",
     "address": "4873 St Laurent Blvd, Montreal, Quebec H2T 1R6",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO3cMmOKh7omodzZkDEG2vGXWBZT3KDAavydfvb=w408-h544-k-no"
+    "imgSrc": "/images/020.jpeg"
   },
   {
     "name": "diff.",
@@ -190,7 +190,7 @@
     "_id": "+15144195415",
     "address": "449 Av. Viger O, Montréal, QC H2Z 1G6",
     "comment": [{}],
-    "imgSrc": ""
+    "imgSrc": "/images/021.jpeg"
   },
   {
     "name": "Tunnel Espresso Bar",
@@ -199,7 +199,7 @@
     "_id": "+15148825288",
     "address": "Time Out Market, Montreal, Quebec H3B 2Y5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipOhF2wuJnzhUQtjifEj96Z1NV08XqcrTLcuR0fg=w408-h386-k-no"
+    "imgSrc": "/images/022.jpeg"
   },
   {
     "name": "Café Humble Lion (Sherbrooke)",
@@ -208,7 +208,7 @@
     "_id": "+15148445466",
     "address": "904 Sherbrooke St W, Montreal, Quebec H3A 1G3",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPxWaTGJ6P4FchpTZONBRWS-boHwFNsHcusWPrX=w426-h240-k-no"
+    "imgSrc": "/images/023.jpeg"
   },
   {
     "name": "MELK Café Monkland",
@@ -217,7 +217,7 @@
     "_id": "+15145085789",
     "address": "5612 Monkland Ave, Montreal, Quebec H4A 1E3",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO8WozM9BaB2x6wAjpvaBaCVqT9YECAwZ6PFMr5=w408-h271-k-no"
+    "imgSrc": "/images/024.jpeg"
   },
   {
     "name": "Café Orr",
@@ -226,7 +226,7 @@
     "_id": "+15145442233",
     "address": "5368 Av. Papineau, Montréal, QC H2H 1W2",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipN_ccqumsTg1qjQasIL8n-Dnu6NFecGPfmp5hY0=w408-h544-k-no"
+    "imgSrc": "/images/025.jpeg"
   },
   {
     "name": "Café OUI MAIS NON",
@@ -235,7 +235,7 @@
     "_id": "+15145075387",
     "address": "72 Rue Jarry E, Montréal, QC H2P 1T1",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMW93YLSB_2XHDEC_7mRhphnBlxouIaJ92ahCgH=w408-h272-k-no"
+    "imgSrc": "/images/026.jpeg"
   },
   {
     "name": "Kahwa Café",
@@ -244,7 +244,7 @@
     "_id": "+14388369708",
     "address": "331 Mont-Royal Ave E, Montreal, Quebec H2T 1P8",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPI4CAMS1vzLX50doz-yozh2YVSr7tM7dEe69xb=w408-h240-k-no-pi0-ya160-ro0-fo100"
+    "imgSrc": "/images/027.jpeg"
   },
   {
     "name": "NELLI",
@@ -253,7 +253,7 @@
     "_id": "+15147884000",
     "address": "104 Saint-Paul St W, Montreal, Quebec H2Y 1Z3",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPjPOvv0KOA2E1qtaK9zOa5E_TxxhETOb4NPv3c=w408-h544-k-no"
+    "imgSrc": "/images/028.jpeg"
   },
   {
     "name": "Columbus Café & Co",
@@ -262,7 +262,7 @@
     "_id": "+15144191787",
     "address": "1200 Mont-Royal Ave E, Montreal, Quebec H2J 1Y2",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipOnw3hTa3r3w27U6cffmBiguWytrau9oCcybyuo=w426-h240-k-no"
+    "imgSrc": "/images/029.jpeg"
   },
   {
     "name": "Parma Café",
@@ -271,7 +271,7 @@
     "_id": "+15148790000",
     "address": "1202 Bishop St, Montreal, Quebec H3G 2E3",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipO630Z3s1Bnc3dBoQcygpbjduLZsYltq5ooieFm=w408-h271-k-no"
+    "imgSrc": "/images/030.jpeg"
   },
   {
     "name": "Stash Café",
@@ -280,7 +280,7 @@
     "_id": "+15148456611",
     "address": "200 Saint-Paul St W, Montreal, Quebec H2Y 1Z9",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipOcjmkwHMxWDDpzxvbeFe4J8gqezzPVyh21VLxP=w412-h240-k-no"
+    "imgSrc": "/images/031.jpeg"
   },
   {
     "name": "Café Rico",
@@ -289,7 +289,7 @@
     "_id": "+15145291321",
     "address": "1207 Mont-Royal Ave E, Montreal, Quebec H2J 1Y2",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMJNKjGRyLPjA6tktmYIpjs_NkCi4kJcS7QKHg1=w408-h306-k-no"
+    "imgSrc": "/images/032.jpeg"
   },
   {
     "name": "Noble Café",
@@ -298,7 +298,7 @@
     "_id": "+15146567630",
     "address": "430 Laurier Ave E, Montreal, Quebec H2J 1E5",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPzBy72DZdDS6FlwUJASpAn7xqFr_ViV0xHEW7p=w426-h240-k-no"
+    "imgSrc": "/images/033.jpeg"
   },
   {
     "name": "My Little Cup",
@@ -307,7 +307,7 @@
     "_id": "1224",
     "address": "dans la station du metro mcgill, 2055 Blvd Robert-Bourassa, Montréal, QC H3A 3H9",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipNRJ6jJKFHwSH4kvD7Nbn550W-tj_Xrne88jmoQ=w413-h240-k-no"
+    "imgSrc": "/images/034.jpeg"
   },
   {
     "name": "afé Melbourne",
@@ -316,7 +316,7 @@
     "_id": "2345",
     "address": "4615 St Laurent Blvd, Montreal, Quebec H2T 1R2",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMEl9yCHvetiyzRes1Ouo3pYESvW-EFWIgx7AKa=w408-h272-k-no"
+    "imgSrc": "/images/035.jpeg"
   },
   {
     "name": "Café Tuyo",
@@ -325,7 +325,7 @@
     "_id": "+15145448896",
     "address": "370 Rue Marie-Anne Est, Montréal, QC H2W 1B3",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMNqwuv23STyFnQT_CtzWfJkiZbFfek1ZjjgZ4h=w427-h240-k-no"
+    "imgSrc": "/images/036.jpeg"
   },
   {
     "name": "Café Sfouf",
@@ -334,7 +334,7 @@
     "_id": "+15145078777",
     "address": "1250 Ontario St E, Montreal, Quebec H2L 1R6",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMafCHbyy5rbc9ccMLoK6KMKQnpn0t6wUPLYMQ-=w408-h272-k-no"
+    "imgSrc": "/images/037.jpeg"
   },
   {
     "name": "Café de' Mercanti",
@@ -343,7 +343,7 @@
     "_id": "+15149691807",
     "address": "6128 Monkland Ave, Montreal, Quebec H4A 1H4",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPq-yoxI8y_5fWdEqDhKK0kHSJAHgTnQxZtWlL0=w408-h240-k-no-pi0-ya160-ro0-fo100"
+    "imgSrc": "/images/038.jpeg"
   },
   {
     "name": "Cafe Gentile",
@@ -352,7 +352,7 @@
     "_id": "+15143839299",
     "address": "9299 Park Ave, Montreal, Quebec H2N 2A2",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipPoIHLKa8t7c0euA2YD7YdzVGeZ0XmYgJtgYHzI=w408-h266-k-no"
+    "imgSrc": "/images/039.jpeg"
   },
   {
     "name": "Maestro Café",
@@ -361,7 +361,7 @@
     "_id": "+15142721136",
     "address": "80 Rue Saint- Viateur O, Montréal, QC H2T 2K8",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipOpxzDNcHMnCwyubi0godfLYKq6k8EQX0AZXTSl=w408-h408-k-no"
+    "imgSrc": "/images/040.jpeg"
   },
   {
     "name": "Croissant Croissant",
@@ -370,6 +370,6 @@
     "_id": "+15145430103",
     "address": "2270 Mont-Royal Ave E, Montreal, Quebec H2H 1K6",
     "comment": [{}],
-    "imgSrc": "https://lh5.googleusercontent.com/p/AF1QipMxTpq80zErHJewb2tmhKl-mVsB5m1GepXlmwM-=w426-h240-k-no"
+    "imgSrc": "/images/041.jpeg"
   }
 ]
