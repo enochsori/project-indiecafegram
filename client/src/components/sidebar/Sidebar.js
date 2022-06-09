@@ -1,9 +1,23 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { CafeContext } from '../CafeContext';
+import CafeList from './CafeList';
 
 const Sidebar = () => {
+  const { cafes } = useContext(CafeContext);
+  console.log(cafes);
+
   return (
     <Wrapper>
-      <ContentWrapper>Sidebar</ContentWrapper>
+      <ContentWrapper>
+        {cafes ? (
+          cafes.map((cafe) => {
+            return <CafeList name={cafe.name} address={cafe.address} />;
+          })
+        ) : (
+          <div>Loading...</div>
+        )}
+      </ContentWrapper>
     </Wrapper>
   );
 };
@@ -17,7 +31,7 @@ const Wrapper = styled.div`
   border: 1px solid blue;
 `;
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.ul`
   position: sticky;
   top: 70px;
   border: 1px solid blue;

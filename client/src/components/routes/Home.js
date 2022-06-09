@@ -11,7 +11,8 @@ const Home = () => {
     googleMapsApiKey: REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
-  return <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
+  return <Wrapper>Home</Wrapper>;
+  // <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
 };
 
 export default Home;

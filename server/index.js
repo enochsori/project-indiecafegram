@@ -2,7 +2,9 @@
 
 const express = require("express");
 const morgan = require("morgan");
-const { getCurrentUser, registerNewUser } = require("./handler");
+const { getCurrentUser, registerNewUser, getCafes } = require("./handler");
+
+const { batchImport } = require("./batchImport");
 
 const PORT = 8000;
 
@@ -29,6 +31,8 @@ express()
     res.send("node server");
   })
 
+  // Get all the cafes
+  .get("/api/cafes", getCafes)
   // Get current user info
   .get("/api/users/:id", getCurrentUser)
 
@@ -42,5 +46,8 @@ express()
 
   // Register a new user into user database
   .post("/api/new-user", registerNewUser)
+
+  // endpoint for batch initial cafe data
+  .post("/api/add-all-cafes", batchImport)
 
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));

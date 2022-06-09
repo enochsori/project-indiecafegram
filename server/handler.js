@@ -1,6 +1,5 @@
 "use strict";
 const { MongoClient } = require("mongodb");
-
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
@@ -49,4 +48,24 @@ const registerNewUser = async (req, res) => {
   client.close();
 };
 
-module.exports = { getCurrentUser, registerNewUser };
+// Get all cafes for display
+const getCafes = async (req, res) => {
+  try {
+    await client.connect();
+    console.log("Connected");
+
+    const db = await client.db("indiecafegram");
+    const data = await db.collection("cafes").find().toArray();
+    console.log(data);
+
+    data
+      ? res
+          .status(200)
+          .json({ status: 200, data, message: "Request completed" })
+      : res.status(400).json({ status: 400, message: "Request denied" });
+  } catch (err) {
+    res.status(404).json({ status: 400, message: "Server error" });
+  }
+};
+
+module.exports = { getCurrentUser, registerNewUser, getCafes };
