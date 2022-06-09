@@ -2,6 +2,11 @@
 
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+};
+
 const { getCurrentUser, registerNewUser, getCafes } = require("./handler");
 
 const { batchImport } = require("./batchImport");
@@ -25,6 +30,7 @@ express()
   .use(express.json())
   .use(express.urlencoded({ extended: false }))
   .use("/", express.static(__dirname + "/"))
+  .use(cors())
 
   // test endpoint
   .get("/api/test", (req, res) => {

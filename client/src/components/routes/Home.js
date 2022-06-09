@@ -11,6 +11,8 @@ const Home = () => {
     googleMapsApiKey: REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
+  console.log(isLoaded);
+
   return <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
 
   // <Wrapper>Home</Wrapper>;
