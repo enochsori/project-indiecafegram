@@ -11,10 +11,14 @@ const Home = () => {
     googleMapsApiKey: REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
-  return <Wrapper>Home</Wrapper>;
-  // <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
+  return <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
+
+  // <Wrapper>Home</Wrapper>;
 };
 
 export default Home;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  position: fixed;
+  top: 70px;
+`;

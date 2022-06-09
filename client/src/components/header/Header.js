@@ -12,18 +12,22 @@ const Header = () => {
 export default Header;
 
 const Wrapper = styled.div`
+  width: 100%;
   height: 70px;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid lightgray;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: fixed;
   background-color: #fff;
+
+  z-index: 100;
 `;
 const ContentWrapper = styled.div`
+  z-index: 90;
+  background-color: #fff;
+  position: fixed;
+  height: 68px;
   width: 1450px;
-  border: 1px solid black;
 `;
 const Title = styled.span``;
 const menuWrapper = styled.ul``;

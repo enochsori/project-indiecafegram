@@ -33,6 +33,6 @@ const AppRouter = () => {
 export default AppRouter;
 
 const Wrapper = styled.div`
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 100%; ;
 `;

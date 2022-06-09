@@ -5,14 +5,20 @@ import CafeList from './CafeList';
 
 const Sidebar = () => {
   const { cafes } = useContext(CafeContext);
-  console.log(cafes);
 
   return (
     <Wrapper>
       <ContentWrapper>
         {cafes ? (
           cafes.map((cafe) => {
-            return <CafeList name={cafe.name} address={cafe.address} />;
+            return (
+              <CafeList
+                key={cafe._id}
+                name={cafe.name}
+                address={cafe.address}
+                src={cafe.imgSrc}
+              />
+            );
           })
         ) : (
           <div>Loading...</div>
@@ -27,12 +33,9 @@ export default Sidebar;
 const Wrapper = styled.div`
   width: 40%;
   height: 100vh;
-  position: relative;
-  border: 1px solid blue;
+  margin-top: 70px;
 `;
 
 const ContentWrapper = styled.ul`
-  position: sticky;
   top: 70px;
-  border: 1px solid blue;
 `;

@@ -1,10 +1,11 @@
 import { async } from '@firebase/util';
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const CafeContext = createContext(null);
 
 const CafeProvider = ({ children }) => {
   const [cafes, setCafes] = useState(null);
+  console.log(cafes);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +17,7 @@ const CafeProvider = ({ children }) => {
   }, []);
 
   return (
-    <CafeContext.Provider value={(cafes, setCafes)}>
+    <CafeContext.Provider value={{ cafes, setCafes }}>
       {children}
     </CafeContext.Provider>
   );

@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <LayoutWrapper>
       <GlobalStyles />
       <Header />
       <WindowSetting>
@@ -21,7 +21,7 @@ function App() {
           </Router>
         </Wrapper>
       </WindowSetting>
-    </>
+    </LayoutWrapper>
   );
 }
 
@@ -44,6 +44,7 @@ export default App;
         </ul> */
 }
 
+const LayoutWrapper = styled.div``;
 const WindowSetting = styled.div`
   height: 100vh;
   width: 100vw;
