@@ -15,8 +15,8 @@ const CommentsList = ({ _id }) => {
       setComment(data[0].comment);
     };
     fechData();
-  }, [_id]);
-  console.log(_id);
+  }, [_id, newComment]);
+
   return (
     <Wrapper>
       {!comment ? (

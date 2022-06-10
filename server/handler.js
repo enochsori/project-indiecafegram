@@ -39,6 +39,7 @@ const registerNewUser = async (req, res) => {
     await client.connect();
     const db = await client.db("indiecafegram");
     await db.collection("users").insertOne(req.body);
+
     res
       .status(200)
       .json({ status: 200, message: "request complete", data: req.body });
@@ -84,4 +85,43 @@ const getCommentsById = async (req, res) => {
   }
 };
 
-module.exports = { getCurrentUser, registerNewUser, getCafes, getCommentsById };
+// Update user comment
+
+// 2. update user collection with user _id
+const addComment = async (req, res) => {
+  const { cafeId, name, userId, newComment } = req.body;
+
+  try {
+    await client.connect();
+    console.log("Connected");
+
+    const db = await client.db("indiecafegram");
+    // 1. update cafe collection with cafe _id
+    console.log(name);
+    const result = await db
+      .collection("cafes")
+      // $addToSet : push new data
+      .updateOne(
+        { _id: cafeId },
+        { $addToSet: { comment: { [name]: newComment } } }
+      );
+    const data = await db.collection("cafes").find({ _id: cafeId }).toArray();
+    console.log(data);
+
+    // check the update result
+    result.acknowledged
+      ? res.status(200).json({ status: 200, message: "Update completed" })
+      : res.status(400).json({ status: 400, message: "Failed to update" });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err.message });
+  }
+  client.close();
+  console.log("Disconnected");
+};
+module.exports = {
+  getCurrentUser,
+  registerNewUser,
+  getCafes,
+  getCommentsById,
+  addComment,
+};

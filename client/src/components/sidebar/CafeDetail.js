@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
+import { UserContext } from '../UserContext';
 import CommentsList from './CommentsList';
 import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import { MdOutlineCancelPresentation } from 'react-icons/md';
@@ -14,6 +15,7 @@ const CafeDetail = () => {
     newComment,
     setNewComment,
   } = useContext(CafeContext);
+  const [userInput, setUserInput] = useState(null);
 
   const inputRef = useRef(null);
   useEffect(() => {
@@ -22,14 +24,46 @@ const CafeDetail = () => {
 
   const { _id, name, address, imgSrc, phone, webSite } = selectedCafe;
 
+  const { currentUser } = useContext(UserContext);
+  if (currentUser) {
+    console.log(currentUser);
+  }
+
   const closeHandler = () => {
     setIsSelected(false);
     setSelectedCafe(false);
   };
+  const updateCommentFetch = async () => {
+    // console.log(newComment);
+    try {
+      const res = await fetch('/api/add-comment', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: currentUser[0]._id,
+          name: currentUser[0]._name,
+          newComment,
+          cafeId: _id,
+        }),
+      });
+      const result = res.json();
+      console.log(result);
+      setNewComment(result);
+    } catch (err) {
+      window.alert(err);
+    }
+  };
 
   const newCommentHandler = (event) => {
     event.preventDefault();
+    // console.log(newComment);
+    // Call a function to fetch updating new comment
+    updateCommentFetch();
+    // event.target.value = '';
   };
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -46,14 +80,17 @@ const CafeDetail = () => {
       <CommentWrapper>
         <CommentsList _id={_id} />
       </CommentWrapper>
-      <NewCommentForm onSubmit={newCommentHandler}>
+      <NewCommentForm>
         <CommentInput
           ref={inputRef}
           type='text'
           placeholder='Leave your comment'
+          onChange={(event) => {
+            setUserInput(event.target.value);
+          }}
         />
 
-        <StyledBsFillArrowUpCircleFill />
+        <StyledBsFillArrowUpCircleFill onSubmit={newCommentHandler} />
       </NewCommentForm>
     </Wrapper>
   );
@@ -64,7 +101,7 @@ export default CafeDetail;
 const Wrapper = styled.div`
   border-radius: 10px;
   width: 430px;
-  height: 1000px;
+  height: 600px;
   position: fixed;
   top: 80px;
   left: 38%;

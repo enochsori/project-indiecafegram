@@ -10,21 +10,32 @@ const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [newUser, setNewUser] = useState(null);
+  const [userId, setUserId] = useState(null);
   const auth = getAuth();
 
   // console.log('current user is:', currentUser);
+  console.log('currentUserid?', userId);
+  console.log('current user?', currentUser);
+
+  useEffect(() => {
+    const savedId = window.localStorage.getItem('userId');
+    if (savedId) {
+      setUserId(savedId);
+    }
+  }, []);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
+      console.log(user);
       if (user) {
-        // console.log(user.uid);
-        setIsLoggedIn(true);
         if (user.uid) {
+          // Fetch to get current user info from mongoDB
           const fetchUserInfo = async () => {
             try {
               const res = await fetch(`/api/users/${user.uid}`);
               const { data } = await res.json();
               setCurrentUser(data);
+              setIsLoggedIn(true);
             } catch (err) {
               console.log('database error');
             }
@@ -33,10 +44,11 @@ const UserProvider = ({ children }) => {
         }
       } else {
         setIsLoggedIn(false);
+        setCurrentUser(null);
       }
       setState('idle');
     });
-  }, []);
+  }, [userId]);
 
   // [POST] Register new user info into database
   useEffect(() => {
@@ -53,7 +65,7 @@ const UserProvider = ({ children }) => {
             },
           });
           const { data } = await res.json();
-          console.log(data);
+          // console.log(data);
           setCurrentUser(data);
         } catch (err) {
           window.alert('Serverside Error');
@@ -72,6 +84,8 @@ const UserProvider = ({ children }) => {
         setCurrentUser,
         newUser,
         setNewUser,
+        userId,
+        setUserId,
       }}
     >
       {children}

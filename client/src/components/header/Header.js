@@ -1,10 +1,28 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { UserContext } from '../UserContext';
+import { getAuth, signOut } from 'firebase/auth';
 
 const Header = () => {
+  const { currentUser } = useContext(UserContext);
+  const { setUserId } = useContext(UserContext);
+  const auth = getAuth();
+
+  const logoutHandler = async () => {
+    // Call signout from firebase
+    await signOut(auth);
+    // Delete localstorage data
+    window.localStorage.removeItem('userId');
+
+    setUserId(null);
+  };
+
   return (
     <Wrapper>
       <ContentWrapper>
         <Title>Indicafegram</Title>
+        {currentUser && <Title>{currentUser[0].name}</Title>}
+        <button onClick={logoutHandler}>Log out</button>
       </ContentWrapper>
     </Wrapper>
   );

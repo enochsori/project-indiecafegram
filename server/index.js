@@ -7,6 +7,7 @@ const {
   registerNewUser,
   getCafes,
   getCommentsById,
+  addComment,
 } = require("./handler");
 const { batchImport } = require("./batchImport");
 
@@ -37,12 +38,14 @@ express()
 
   // Get all the cafes
   .get("/api/cafes", getCafes)
+
   // Get current user info
   .get("/api/users/:id", getCurrentUser)
+
   // Get comments based on id
   .get("/api/comment/:_id", getCommentsById)
 
-  // this is our catch all endpoint.
+  // This is our catch all endpoint.
   .get("*", (req, res) => {
     res.status(404).json({
       status: 404,
@@ -53,7 +56,10 @@ express()
   // Register a new user into user database
   .post("/api/new-user", registerNewUser)
 
-  // endpoint for batch initial cafe data
+  // Endpoint for batch initial cafe data
   .post("/api/add-all-cafes", batchImport)
+
+  // Update user comment
+  .patch("/api/add-comment", addComment)
 
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));

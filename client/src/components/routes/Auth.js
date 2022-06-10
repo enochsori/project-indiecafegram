@@ -34,6 +34,7 @@ const Auth = () => {
     inputRef.current.focus();
   }, []);
 
+  // When user
   const isSignupToggleHandler = () => {
     setIsSignup(!isSignup);
   };
@@ -47,12 +48,15 @@ const Auth = () => {
         password
       );
 
+      // Grap new user info to add new user into mongoDB
       setNewUser({ name, email, _id: result.user.uid });
+
       // Change Login state
       onAuthStateChanged(auth, (user) => {
         if (user) {
           console.log(user);
-          setIsLoggedIn(true);
+          setUserId(user.uid);
+          window.localStorage.setItem('userId', user.uid);
         } else {
           setIsLoggedIn(false);
         }
@@ -60,7 +64,7 @@ const Auth = () => {
     } catch (err) {
       setError(err);
       setIsLoggedIn(false);
-      isSignupToggleHandler();
+      window.alert(err);
     }
   };
 
@@ -70,18 +74,19 @@ const Auth = () => {
       // Firebase auth. checks user validation. (is member?)
       await signInWithEmailAndPassword(auth, email, password);
 
-      // Change Login state
+      // Fire fetch in UserContext.js to get user info
       onAuthStateChanged(auth, (user) => {
         if (user) {
           console.log(user);
-          setIsLoggedIn(true);
           setUserId(user.uid);
+          window.localStorage.setItem('userId', user.uid);
         }
       });
     } catch (err) {
       setError(err);
       setIsLoggedIn(false);
-      isSignupToggleHandler();
+      // do Something notify to user instaed of alert
+      window.alert(err);
     }
   };
 
@@ -93,7 +98,7 @@ const Auth = () => {
       const token = credentail.accessToken;
       const user = result.user;
       console.log(user);
-      setIsLoggedIn(true);
+      setUserId(user.uid);
       setNewUser({ name: null, email: user.email, _id: user.uid });
     } catch (err) {
       setError(err);
