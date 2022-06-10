@@ -12,7 +12,6 @@ const Map = () => {
   }, []);
 
   const containerStyle = {
-    
     width: '900px',
     height: '1000px',
   };

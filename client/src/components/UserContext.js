@@ -12,7 +12,7 @@ const UserProvider = ({ children }) => {
   const [newUser, setNewUser] = useState(null);
   const auth = getAuth();
 
-  console.log('current user is:', currentUser);
+  // console.log('current user is:', currentUser);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -41,7 +41,7 @@ const UserProvider = ({ children }) => {
   // [POST] Register new user info into database
   useEffect(() => {
     if (newUser) {
-      console.log(newUser);
+      // console.log(newUser);
       const newUserRegisterFetch = async () => {
         try {
           const res = await fetch('/api/new-user', {

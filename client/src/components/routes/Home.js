@@ -1,9 +1,13 @@
 import { useJsApiLoader } from '@react-google-maps/api';
+import { useContext } from 'react';
 
 import styled from 'styled-components';
+import { CafeContext } from '../CafeContext';
 import Map from '../map/Map';
+import CafeDetail from '../sidebar/CafeDetail';
 
 const Home = () => {
+  const { isSelected } = useContext(CafeContext);
   const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env;
 
   const { isLoaded } = useJsApiLoader({
@@ -11,9 +15,12 @@ const Home = () => {
     googleMapsApiKey: REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
-  console.log(isLoaded);
-
-  return <Wrapper>{!isLoaded ? <span>Home loading..</span> : <Map />}</Wrapper>;
+  return (
+    <Wrapper>
+      {!isLoaded ? <span>Home loading..</span> : <Map />}
+      {isSelected && <CafeDetail />}
+    </Wrapper>
+  );
 };
 
 export default Home;

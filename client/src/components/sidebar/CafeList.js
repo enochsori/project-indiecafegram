@@ -1,14 +1,26 @@
+import { useContext, useState } from 'react';
 import styled from 'styled-components';
+import { CafeContext } from '../CafeContext';
+import CafeDetail from './CafeDetail';
 
-const CafeList = ({ name, address, src }) => {
+const CafeList = ({ cafe }) => {
+  const { name, address, imgSrc } = cafe;
+  const { isSelected, setIsSelected, setSelectedCafe } =
+    useContext(CafeContext);
+
+  const displayDetailHandler = (event) => {
+    setIsSelected(true);
+    setSelectedCafe(cafe);
+  };
+
   return (
-    <CafeListItem>
+    <CafeListItem onClick={displayDetailHandler}>
       <ContentsWrapper>
         <Name>{name}</Name>
         <Address>{address}</Address>
       </ContentsWrapper>
       <ImageWrapper>
-        <Image src={src} />
+        <Image src={imgSrc} />
       </ImageWrapper>
     </CafeListItem>
   );
@@ -17,6 +29,7 @@ const CafeList = ({ name, address, src }) => {
 export default CafeList;
 
 const CafeListItem = styled.li`
+  position: relative;
   display: flex;
   height: 150px;
   border-bottom: 1px solid lightgray;
@@ -28,6 +41,7 @@ const CafeListItem = styled.li`
     background-color: #fff;
   }
 `;
+
 const ContentsWrapper = styled.div`
   width: 60%;
   display: flex;
@@ -36,12 +50,12 @@ const ContentsWrapper = styled.div`
 `;
 const ImageWrapper = styled.div`
   overflow: hidden;
-  width: 20%;
+  width: 25%;
   height: 65%;
   border-radius: 10px;
 `;
 const Name = styled.span`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   margin-bottom: 20px;
 `;

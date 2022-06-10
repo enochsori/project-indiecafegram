@@ -5,8 +5,11 @@ export const CafeContext = createContext(null);
 
 const CafeProvider = ({ children }) => {
   const [cafes, setCafes] = useState(null);
-  console.log(cafes);
+  const [isSelected, setIsSelected] = useState(false);
+  const [selectedCafe, setSelectedCafe] = useState(null);
+  // console.log(cafes);
 
+  // Get all the cafe list from mongoDB
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch('/api/cafes');
@@ -17,7 +20,16 @@ const CafeProvider = ({ children }) => {
   }, []);
 
   return (
-    <CafeContext.Provider value={{ cafes, setCafes }}>
+    <CafeContext.Provider
+      value={{
+        cafes,
+        setCafes,
+        isSelected,
+        setIsSelected,
+        selectedCafe,
+        setSelectedCafe,
+      }}
+    >
       {children}
     </CafeContext.Provider>
   );

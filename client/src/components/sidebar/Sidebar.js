@@ -11,14 +11,7 @@ const Sidebar = () => {
       <ContentWrapper>
         {cafes ? (
           cafes.map((cafe) => {
-            return (
-              <CafeList
-                key={cafe._id}
-                name={cafe.name}
-                address={cafe.address}
-                src={cafe.imgSrc}
-              />
-            );
+            return <CafeList key={cafe._id} cafe={cafe} />;
           })
         ) : (
           <div>Loading...</div>
