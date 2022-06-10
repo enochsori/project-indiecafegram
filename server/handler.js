@@ -68,4 +68,20 @@ const getCafes = async (req, res) => {
   }
 };
 
-module.exports = { getCurrentUser, registerNewUser, getCafes };
+// Get comments by id
+const getCommentsById = async (req, res) => {
+  const { _id } = req.params;
+  console.log(_id);
+  try {
+    await client.connect();
+    console.log("connected");
+    const db = await client.db("indiecafegram");
+    const data = await db.collection("cafes").find({ _id }).toArray();
+
+    res.status(200).json({ status: 200, data });
+  } catch (err) {
+    res.status(400).json({ status: 400, message: err.message });
+  }
+};
+
+module.exports = { getCurrentUser, registerNewUser, getCafes, getCommentsById };

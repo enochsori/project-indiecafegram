@@ -13,7 +13,7 @@ const Map = () => {
 
   const containerStyle = {
     width: '900px',
-    height: '1000px',
+    height: '1500px',
   };
   const onUnmount = useCallback((map) => {
     setMap(null);

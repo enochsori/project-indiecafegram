@@ -9,8 +9,10 @@ const CafeList = ({ cafe }) => {
     useContext(CafeContext);
 
   const displayDetailHandler = (event) => {
-    setIsSelected(true);
-    setSelectedCafe(cafe);
+    if (name !== null) {
+      setIsSelected(true);
+      setSelectedCafe(cafe);
+    }
   };
 
   return (

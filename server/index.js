@@ -2,7 +2,12 @@
 
 const express = require("express");
 const morgan = require("morgan");
-const { getCurrentUser, registerNewUser, getCafes } = require("./handler");
+const {
+  getCurrentUser,
+  registerNewUser,
+  getCafes,
+  getCommentsById,
+} = require("./handler");
 const { batchImport } = require("./batchImport");
 
 const PORT = 8000;
@@ -34,6 +39,8 @@ express()
   .get("/api/cafes", getCafes)
   // Get current user info
   .get("/api/users/:id", getCurrentUser)
+  // Get comments based on id
+  .get("/api/comment/:_id", getCommentsById)
 
   // this is our catch all endpoint.
   .get("*", (req, res) => {

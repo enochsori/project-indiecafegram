@@ -7,6 +7,7 @@ const CafeProvider = ({ children }) => {
   const [cafes, setCafes] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
   const [selectedCafe, setSelectedCafe] = useState(null);
+  const [newComment, setNewComment] = useState(null);
   // console.log(cafes);
 
   // Get all the cafe list from mongoDB
@@ -28,6 +29,8 @@ const CafeProvider = ({ children }) => {
         setIsSelected,
         selectedCafe,
         setSelectedCafe,
+        newComment,
+        setNewComment,
       }}
     >
       {children}
