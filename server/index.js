@@ -40,7 +40,7 @@ express()
   .get("/api/cafes", getCafes)
 
   // Get current user info
-  .get("/api/users/:id", getCurrentUser)
+  .get("/api/users/:_id", getCurrentUser)
 
   // Get comments based on id
   .get("/api/comment/:_id", getCommentsById)

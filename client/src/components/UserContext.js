@@ -25,16 +25,16 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log('here');
-      // console.log(user);
+      console.log(user.uid);
       if (user) {
         if (user.uid) {
           // Fetch to get current user info from mongoDB
           const fetchUserInfo = async () => {
             try {
               const res = await fetch(`/api/users/${user.uid}`);
-              const data = await res.json();
-              setCurrentUser(data.data);
+              const { data } = await res.json();
+              console.log(data);
+              setCurrentUser(data);
               setIsLoggedIn(true);
               setStatus('idle');
             } catch (err) {
@@ -67,6 +67,7 @@ const UserProvider = ({ children }) => {
           });
           const { data } = await res.json();
           console.log('new user', data);
+          setUserId(data._id);
         } catch (err) {
           window.alert('Serverside Error');
         }

@@ -12,40 +12,44 @@ const client = new MongoClient(MONGO_URI, options);
 
 // Get current user info from database
 const getCurrentUser = async (req, res) => {
-  const { id } = req.params;
+  const { _id } = req.params;
+  console.log(_id);
 
   try {
     await client.connect();
     const db = await client.db("indiecafegram");
-    const data = await db.collection("users").find({ _id: id }).toArray();
+    const data = await db.collection("users").find({ _id }).toArray();
 
     client.close();
 
     data.length === 0
-      ? res.status(400).json({ status: 400 })
+      ? res.status(400).json({ status: 400, message: "Not found " })
       : res.status(200).json({
           status: 200,
           data,
         });
   } catch (err) {
     res.status(500).json({
-      status: 400,
-      message: "something wrong",
+      status: 500,
+      message: "Database connection error",
     });
   }
 };
 
 // Register a new user into the database
 const registerNewUser = async (req, res) => {
+  console.log(req.body);
+  const { _id } = req.body;
   try {
     await client.connect();
     const db = await client.db("indiecafegram");
     await db.collection("users").insertOne(req.body);
-    const data = db.collection("users").find({ _id });
-
-    res.status(200).json({ status: 200, message: "request complete", data });
+    const data = await db.collection("users").find({ _id }).toArray();
+    data
+      ? res.status(200).json({ status: 200, message: "request complete", data })
+      : res.status(400).json({ status: 400, message: "Not found" });
   } catch (err) {
-    res.status(500).json({ status: 404, message: err.message });
+    res.status(500).json({ status: 500, message: err.message });
   }
   client.close();
 };
