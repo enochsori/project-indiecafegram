@@ -6,16 +6,15 @@ import { getAuth } from 'firebase/auth';
 export const UserContext = createContext(null);
 
 const UserProvider = ({ children }) => {
-  const [state, setState] = useState('loading');
+  const [status, setStatus] = useState('loading');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [newUser, setNewUser] = useState(null);
   const [userId, setUserId] = useState(null);
   const auth = getAuth();
 
-  // console.log('current user is:', currentUser);
+  console.log('current user is:', currentUser);
   console.log('currentUserid?', userId);
-  console.log('current user?', currentUser);
 
   useEffect(() => {
     const savedId = window.localStorage.getItem('userId');
@@ -26,16 +25,18 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
+      console.log('here');
+      // console.log(user);
       if (user) {
         if (user.uid) {
           // Fetch to get current user info from mongoDB
           const fetchUserInfo = async () => {
             try {
               const res = await fetch(`/api/users/${user.uid}`);
-              const { data } = await res.json();
-              setCurrentUser(data);
+              const data = await res.json();
+              setCurrentUser(data.data);
               setIsLoggedIn(true);
+              setStatus('idle');
             } catch (err) {
               console.log('database error');
             }
@@ -45,15 +46,15 @@ const UserProvider = ({ children }) => {
       } else {
         setIsLoggedIn(false);
         setCurrentUser(null);
+        setStatus('loading');
       }
-      setState('idle');
     });
   }, [userId]);
 
   // [POST] Register new user info into database
   useEffect(() => {
     if (newUser) {
-      // console.log(newUser);
+      console.log(newUser);
       const newUserRegisterFetch = async () => {
         try {
           const res = await fetch('/api/new-user', {
@@ -65,8 +66,7 @@ const UserProvider = ({ children }) => {
             },
           });
           const { data } = await res.json();
-          // console.log(data);
-          setCurrentUser(data);
+          console.log('new user', data);
         } catch (err) {
           window.alert('Serverside Error');
         }
@@ -86,6 +86,8 @@ const UserProvider = ({ children }) => {
         setNewUser,
         userId,
         setUserId,
+        setStatus,
+        status,
       }}
     >
       {children}

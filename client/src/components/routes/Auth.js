@@ -47,20 +47,13 @@ const Auth = () => {
         email,
         password
       );
-
       // Grap new user info to add new user into mongoDB
-      setNewUser({ name, email, _id: result.user.uid });
-
-      // Change Login state
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          console.log(user);
-          setUserId(user.uid);
-          window.localStorage.setItem('userId', user.uid);
-        } else {
-          setIsLoggedIn(false);
-        }
-      });
+      if (result.user) {
+        console.log('signed up', result.
+        user);
+        setNewUser({ name, email, _id: result.user.uid });
+        window.localStorage.setItem('userId', result.user.uid);
+      }
     } catch (err) {
       setError(err);
       setIsLoggedIn(false);
@@ -94,11 +87,10 @@ const Auth = () => {
     try {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
-      const credentail = GoogleAuthProvider.credentialFromResult(result);
-      const token = credentail.accessToken;
       const user = result.user;
-      console.log(user);
+      console.log(user.uid);
       setUserId(user.uid);
+
       setNewUser({ name: null, email: user.email, _id: user.uid });
     } catch (err) {
       setError(err);

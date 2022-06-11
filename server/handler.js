@@ -21,12 +21,14 @@ const getCurrentUser = async (req, res) => {
 
     client.close();
 
-    res.status(200).json({
-      status: 200,
-      data,
-    });
+    data.length === 0
+      ? res.status(400).json({ status: 400 })
+      : res.status(200).json({
+          status: 200,
+          data,
+        });
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
       status: 400,
       message: "something wrong",
     });
@@ -39,12 +41,11 @@ const registerNewUser = async (req, res) => {
     await client.connect();
     const db = await client.db("indiecafegram");
     await db.collection("users").insertOne(req.body);
+    const data = db.collection("users").find({ _id });
 
-    res
-      .status(200)
-      .json({ status: 200, message: "request complete", data: req.body });
+    res.status(200).json({ status: 200, message: "request complete", data });
   } catch (err) {
-    res.status(404).json({ status: 404, message: err.message });
+    res.status(500).json({ status: 404, message: err.message });
   }
   client.close();
 };
