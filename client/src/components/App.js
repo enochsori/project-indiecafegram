@@ -10,10 +10,11 @@ function App() {
   return (
     <LayoutWrapper>
       <GlobalStyles />
-      <Header />
+
       <WindowSetting>
         <Wrapper>
           <Router>
+            <Header />
             <LayoutSidebarAndMainWrapper>
               <AppRouter />
 

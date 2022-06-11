@@ -6,12 +6,14 @@ import CafeDetail from './CafeDetail';
 const CafeList = ({ cafe }) => {
   const { name, address, imgSrc } = cafe;
   const { isSelected, setIsSelected, setSelectedCafe } =
-  useContext(CafeContext);
+    useContext(CafeContext);
 
   const displayDetailHandler = (event) => {
     if (name !== null) {
-      setIsSelected(true);
-      setSelectedCafe(cafe);
+      setTimeout(() => {
+        setIsSelected(true);
+        setSelectedCafe(cafe);
+      }, 150);
     }
   };
 

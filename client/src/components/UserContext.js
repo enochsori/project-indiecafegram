@@ -13,8 +13,8 @@ const UserProvider = ({ children }) => {
   const [userId, setUserId] = useState(null);
   const auth = getAuth();
 
-  // console.log('current user is:', currentUser);
-  // console.log('currentUserid?', userId);
+  console.log('current user is:', currentUser);
+  console.log('currentUserid?', userId);
 
   useEffect(() => {
     const savedId = window.localStorage.getItem('userId');
@@ -25,7 +25,6 @@ const UserProvider = ({ children }) => {
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      console.log(user.uid);
       if (user) {
         if (user.uid) {
           // Fetch to get current user info from mongoDB

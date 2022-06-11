@@ -53,6 +53,7 @@ const CafeDetail = () => {
       const result = await res.json();
       console.log(result);
       setNewComment(result);
+      inputRef.current.value = '';
     } catch (err) {
       window.alert('um..', err);
     }
@@ -104,7 +105,7 @@ export default CafeDetail;
 const Wrapper = styled.div`
   border-radius: 10px;
   width: 430px;
-  height: 600px;
+  height: 800px;
   position: fixed;
   top: 80px;
   left: 38%;
@@ -120,7 +121,7 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 20%;
+  height: 25%;
   overflow: hidden;
   margin-bottom: 15px;
 `;
