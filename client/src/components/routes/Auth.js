@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState, useRef, useEffect, useContext } from 'react';
-
+import { FcGoogle } from 'react-icons/fc';
+import cafe from '../../images/cafe.jpeg';
 import { UserContext } from '../UserContext';
 import {
   getAuth,
@@ -8,15 +9,8 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   GoogleAuthProvider,
-  TwitterAuthProvider,
   signInWithPopup,
-  FacebookAuthProvider,
 } from 'firebase/auth';
-
-import { FcGoogle } from 'react-icons/fc';
-import { AiOutlineTwitter } from 'react-icons/ai';
-import { AiFillFacebook } from 'react-icons/ai';
-import cafe from '../../images/cafe.jpeg';
 
 const Auth = () => {
   const [email, setEmail] = useState('');
@@ -49,8 +43,7 @@ const Auth = () => {
       );
       // Grap new user info to add new user into mongoDB
       if (result.user) {
-        console.log('signed up', result.
-        user);
+        console.log('signed up', result.user);
         setNewUser({ name, email, _id: result.user.uid });
         window.localStorage.setItem('userId', result.user.uid);
       }
@@ -70,7 +63,7 @@ const Auth = () => {
       // Fire fetch in UserContext.js to get user info
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          console.log(user);
+          // console.log(user);
           setUserId(user.uid);
           window.localStorage.setItem('userId', user.uid);
         }
@@ -88,7 +81,7 @@ const Auth = () => {
       const provider = new GoogleAuthProvider();
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
-      console.log(user.uid);
+      // console.log(user.uid);
       setUserId(user.uid);
 
       setNewUser({ name: null, email: user.email, _id: user.uid });

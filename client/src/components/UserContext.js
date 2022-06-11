@@ -13,8 +13,8 @@ const UserProvider = ({ children }) => {
   const [userId, setUserId] = useState(null);
   const auth = getAuth();
 
-  console.log('current user is:', currentUser);
-  console.log('currentUserid?', userId);
+  // console.log('current user is:', currentUser);
+  // console.log('currentUserid?', userId);
 
   useEffect(() => {
     const savedId = window.localStorage.getItem('userId');
@@ -54,7 +54,7 @@ const UserProvider = ({ children }) => {
   // [POST] Register new user info into database
   useEffect(() => {
     if (newUser) {
-      console.log(newUser);
+      // console.log(newUser);
       const newUserRegisterFetch = async () => {
         try {
           const res = await fetch('/api/new-user', {

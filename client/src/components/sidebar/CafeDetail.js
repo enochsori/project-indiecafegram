@@ -25,6 +25,7 @@ const CafeDetail = () => {
   const { _id, name, address, imgSrc, phone, webSite } = selectedCafe;
 
   const { currentUser } = useContext(UserContext);
+
   if (currentUser) {
     console.log(currentUser);
   }
@@ -33,35 +34,36 @@ const CafeDetail = () => {
     setIsSelected(false);
     setSelectedCafe(false);
   };
+
   const updateCommentFetch = async () => {
-    // console.log(newComment);
+    console.log(userInput);
     try {
       const res = await fetch('/api/add-comment', {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           userId: currentUser[0]._id,
-          name: currentUser[0]._name,
-          newComment,
+          name: currentUser[0].name,
+          newComment: userInput,
           cafeId: _id,
         }),
       });
-      const result = res.json();
+      const result = await res.json();
       console.log(result);
       setNewComment(result);
     } catch (err) {
-      window.alert(err);
+      window.alert('um..', err);
     }
   };
 
   const newCommentHandler = (event) => {
     event.preventDefault();
-    // console.log(newComment);
+    console.log('new comment?');
     // Call a function to fetch updating new comment
     updateCommentFetch();
-    // event.target.value = '';
+    event.target.value = '';
   };
 
   return (
@@ -80,7 +82,7 @@ const CafeDetail = () => {
       <CommentWrapper>
         <CommentsList _id={_id} />
       </CommentWrapper>
-      <NewCommentForm>
+      <NewCommentForm onSubmit={newCommentHandler}>
         <CommentInput
           ref={inputRef}
           type='text'
@@ -89,8 +91,9 @@ const CafeDetail = () => {
             setUserInput(event.target.value);
           }}
         />
-
-        <StyledBsFillArrowUpCircleFill onSubmit={newCommentHandler} />
+        <SubmitButton>
+          <StyledBsFillArrowUpCircleFill />
+        </SubmitButton>
       </NewCommentForm>
     </Wrapper>
   );
@@ -180,8 +183,10 @@ const CommentInput = styled.input`
   border-radius: 5px;
   padding: 0 5px;
 `;
-const StyledBsFillArrowUpCircleFill = styled(BsFillArrowUpCircleFill)`
+
+const SubmitButton = styled.button`
   cursor: pointer;
+  background-color: transparent;
   border: none;
   border-radius: 30%;
   font-size: 1.5rem;
@@ -190,9 +195,10 @@ const StyledBsFillArrowUpCircleFill = styled(BsFillArrowUpCircleFill)`
   color: #2470a0;
   position: absolute;
   right: 20px;
-  top: 19px;
+  top: 22px;
   transition: all 200ms ease-in;
   &:hover {
     color: #1dad9b;
   }
 `;
+const StyledBsFillArrowUpCircleFill = styled(BsFillArrowUpCircleFill)``;
