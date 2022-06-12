@@ -54,7 +54,7 @@ const WindowSetting = styled.div`
   justify-content: center;
 `;
 const Wrapper = styled.div`
-  width: 1360px;
+  width: 1200px;
   height: 100vh;
 `;
 

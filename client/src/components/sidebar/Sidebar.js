@@ -24,7 +24,7 @@ const Sidebar = () => {
 export default Sidebar;
 
 const Wrapper = styled.div`
-  width: 30%;
+  width: 29%;
   height: 100vh;
   margin-top: 70px;
 `;

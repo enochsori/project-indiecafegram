@@ -60,11 +60,12 @@ const Wrapper = styled.div`
   z-index: 100;
 `;
 const ContentWrapper = styled.div`
+  border: 1px solid blue;
   z-index: 90;
   background-color: #fff;
   position: fixed;
   height: 68px;
-  width: 1450px;
+  width: 1250px;
   display: flex;
   align-items: center;
   cursor: pointer;

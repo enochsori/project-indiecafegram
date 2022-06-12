@@ -105,10 +105,10 @@ export default CafeDetail;
 const Wrapper = styled.div`
   border-radius: 10px;
   width: 430px;
-  height: 800px;
+  height: 650px;
   position: fixed;
   top: 80px;
-  left: 38%;
+  left: 36%;
   transform: translateX(5%);
   z-index: 100;
   border-radius: 10px;
@@ -121,7 +121,7 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 25%;
+  height: 45%;
   overflow: hidden;
   margin-bottom: 15px;
 `;

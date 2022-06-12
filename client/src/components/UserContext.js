@@ -13,8 +13,8 @@ const UserProvider = ({ children }) => {
   const [userId, setUserId] = useState(null);
   const auth = getAuth();
 
-  console.log('current user is:', currentUser);
-  console.log('currentUserid?', userId);
+  // console.log('current user is:', currentUser);
+  // console.log('currentUserid?', userId);
 
   useEffect(() => {
     const savedId = window.localStorage.getItem('userId');
@@ -32,7 +32,7 @@ const UserProvider = ({ children }) => {
             try {
               const res = await fetch(`/api/users/${user.uid}`);
               const { data } = await res.json();
-              console.log(data);
+              // console.log(data);
               setCurrentUser(data);
               setIsLoggedIn(true);
               setStatus('idle');
@@ -66,7 +66,9 @@ const UserProvider = ({ children }) => {
           });
           const { data } = await res.json();
           console.log('new user', data);
-          setUserId(data._id);
+          if (data[0]._id === newUser._id) {
+            setUserId(data[0]._id);
+          }
         } catch (err) {
           window.alert('Serverside Error');
         }
