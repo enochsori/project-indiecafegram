@@ -17,8 +17,8 @@ const Home = () => {
 
   return (
     <Wrapper>
-      {!isLoaded ? <span>Home loading..</span> : <Map />}
-      {isSelected && <CafeDetail />}
+      {/* {!isLoaded ? <span>Home loading..</span> : <Map />}
+      {isSelected && <CafeDetail />} */}
     </Wrapper>
   );
 };

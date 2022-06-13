@@ -13,7 +13,7 @@ const CafeProvider = ({ children }) => {
   const [selectedCafe, setSelectedCafe] = useState(null);
   const [newComment, setNewComment] = useState(null);
   const [geoCodes, setGeoCodes] = useState([]);
-  const [center, setCenter] = useState(null);
+  const [center, setCenter] = useState({ lat: 45.501689, lng: -73.567256 });
 
   // console.log(cafes);
 
@@ -53,6 +53,8 @@ const CafeProvider = ({ children }) => {
         newComment,
         setNewComment,
         geoCodes,
+        center,
+        setCenter,
       }}
     >
       {children}

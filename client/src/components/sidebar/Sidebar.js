@@ -10,8 +10,8 @@ const Sidebar = () => {
     <Wrapper>
       <ContentWrapper>
         {cafes ? (
-          cafes.map((cafe) => {
-            return <CafeList key={cafe._id} cafe={cafe} />;
+          cafes.map((cafe, index) => {
+            return <CafeList index={index} key={cafe._id} cafe={cafe} />;
           })
         ) : (
           <div>Loading...</div>

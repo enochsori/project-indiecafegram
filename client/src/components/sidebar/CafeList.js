@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
 import CafeDetail from './CafeDetail';
 
-const CafeList = ({ cafe }) => {
+const CafeList = ({ cafe, index }) => {
   const { name, address, imgSrc } = cafe;
-  const { isSelected, setIsSelected, setSelectedCafe } =
+  const { isSelected, setIsSelected, setSelectedCafe, setCenter, geoCodes } =
     useContext(CafeContext);
 
   const displayDetailHandler = (event) => {
@@ -17,8 +17,12 @@ const CafeList = ({ cafe }) => {
     }
   };
 
+  const displayMap = (event) => {
+    setCenter(geoCodes[index]);
+  };
+
   return (
-    <CafeListItem onClick={displayDetailHandler}>
+    <CafeListItem onMouseOver={displayMap} onClick={displayDetailHandler}>
       <ContentsWrapper>
         <Name>{name}</Name>
         <Address>{address}</Address>
@@ -67,4 +71,6 @@ const LikesWrapper = styled.div``;
 const Address = styled.span`
   color: rgba(0, 0, 0, 0.7);
 `;
-const Image = styled.img``;
+const Image = styled.img`
+  object-fit: cover;
+`;
