@@ -17,7 +17,6 @@ function App() {
             <Header />
             <LayoutSidebarAndMainWrapper>
               <AppRouter />
-              <Sidebar />
             </LayoutSidebarAndMainWrapper>
           </Router>
         </Wrapper>
@@ -54,7 +53,6 @@ const WindowSetting = styled.div`
 `;
 const Wrapper = styled.div`
   width: 1200px;
-  height: 100vh;
 `;
 
 const LayoutSidebarAndMainWrapper = styled.div`

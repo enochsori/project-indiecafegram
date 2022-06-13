@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
 import Map from '../map/Map';
 import CafeDetail from '../sidebar/CafeDetail';
+import Sidebar from '../sidebar/Sidebar';
 
 const Home = () => {
   const { isSelected } = useContext(CafeContext);
@@ -17,8 +18,12 @@ const Home = () => {
 
   return (
     <Wrapper>
-      {/* {!isLoaded ? <span>Home loading..</span> : <Map />}
-      {isSelected && <CafeDetail />} */}
+      {!isLoaded ? <span>Home loading..</span> : <Map />}
+      {isSelected && <CafeDetail />}
+
+      <LayoutSidebarAndMap>
+        <Sidebar />
+      </LayoutSidebarAndMap>
     </Wrapper>
   );
 };
@@ -26,3 +31,7 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.div``;
+const LayoutSidebarAndMap = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;

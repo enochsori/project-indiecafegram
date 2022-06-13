@@ -22,36 +22,39 @@ const Map = () => {
     setMap(null);
   }, []);
 
-  return (
-    <Wrapper>
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={16}
-        //
-        onUnmount={onUnmount}
-      >
-        {/* {geoCodes &&
-          geoCodes.map((geoCode, index) => {
-            console.log(geoCode);
-            return (
-              <Marker
-                key={Math.floor(Math.random() * 400000)}
-                position={geoCode}
-                index={index}
-              />
-            );
-          })} */}
-        <Marker position={center} />
-      </GoogleMap>
-    </Wrapper>
-  );
+  return <Wrapper>map page</Wrapper>;
+  // (
+  //   <Wrapper>
+  //     <GoogleMap
+  //       mapContainerStyle={containerStyle}
+  //       center={center}
+  //       zoom={16}
+  //       //
+  //       onUnmount={onUnmount}
+  //     >
+  //       {/* {geoCodes &&
+  //         geoCodes.map((geoCode, index) => {
+  //           console.log(geoCode);
+  //           return (
+  //             <Marker
+  //               key={Math.floor(Math.random() * 400000)}
+  //               position={geoCode}
+  //               index={index}
+  //             />
+  //           );
+  //         })} */}
+  //       <Marker position={center} />
+  //     </GoogleMap>
+  //   </Wrapper>
+  // );
 };
 
 export default Map;
 
 const Wrapper = styled.div`
   width: 850px;
+  height: 950px;
   position: fixed;
   top: 70px;
+  border: 1px solid red;
 `;
