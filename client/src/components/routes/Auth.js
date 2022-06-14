@@ -46,6 +46,7 @@ const Auth = () => {
         console.log('signed up', result.user);
         setNewUser({ name, email, _id: result.user.uid });
         window.localStorage.setItem('userId', result.user.uid);
+        setUserId(result.user.uid);
       }
     } catch (err) {
       setError(err);

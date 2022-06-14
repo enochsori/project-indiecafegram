@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from 'react';
+import { useRef, useState, useContext, useEffect } from 'react';
 import Comment from './Comment';
 import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
@@ -6,7 +6,7 @@ import { CafeContext } from '../CafeContext';
 const CommentsList = ({ _id }) => {
   const [comment, setComment] = useState(null);
   const { newComment } = useContext(CafeContext);
-
+  const scrollRef = useRef(null);
   // Get comments from db
   useEffect(() => {
     const getComments = async () => {
@@ -17,13 +17,22 @@ const CommentsList = ({ _id }) => {
     getComments();
   }, [_id, newComment]);
 
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [_id, newComment]);
+
   return (
     <Wrapper>
       {!comment ? (
         <div>Loading...</div>
       ) : (
         comment.map((review) => (
-          <Comment key={Math.floor(Math.random() * 200000)} comment={review} />
+          <div key={Math.floor(Math.random() * 200000)} ref={scrollRef}>
+            <Comment
+              key={Math.floor(Math.random() * 200000)}
+              comment={review}
+            />
+          </div>
         ))
       )}
     </Wrapper>

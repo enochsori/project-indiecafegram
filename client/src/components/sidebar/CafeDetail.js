@@ -32,7 +32,6 @@ const CafeDetail = () => {
   const closeHandler = () => {
     setIsSelected(false);
     setSelectedCafe(false);
-    setGeoCode(geoCodeBack);
   };
 
   const updateCommentFetch = async () => {

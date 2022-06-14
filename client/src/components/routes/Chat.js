@@ -35,7 +35,7 @@ const Chat = () => {
       }
     };
     getConversations();
-  }, []);
+  }, [newChat]);
 
   useEffect(() => {
     const getUser = async () => {
@@ -104,14 +104,8 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    if (currentChat) {
-      scrollRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'end',
-        inline: 'nearest',
-      });
-    }
-  }, [conversations]);
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   return (
     <Wrapper>
@@ -142,9 +136,12 @@ const Chat = () => {
           <ChatBoxWrapper>
             {currentChat ? (
               <>
-                <ChatBoxTop ref={scrollRef}>
+                <ChatBoxTop>
                   {messages.map((message) => (
-                    <div key={Math.floor(Math.random() * 4000000)}>
+                    <div
+                      ref={scrollRef}
+                      key={Math.floor(Math.random() * 4000000)}
+                    >
                       <Message
                         key={Math.floor(Math.random() * 4000000)}
                         message={message}
@@ -188,7 +185,7 @@ const Wrapper = styled.div`
 const ChatMenu = styled.div`
   flex: 2.5;
   /* border: 1px solid black; */
-  height: 780px;
+  height: 100vh;
   overflow-y: scroll;
   scroll-behavior: smooth;
   background-color: #fff;
@@ -215,7 +212,7 @@ const ChatBoxWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  height: 780px;
+  height: 750px;
 `;
 const ChatBoxTop = styled.div`
   padding-right: 15px;

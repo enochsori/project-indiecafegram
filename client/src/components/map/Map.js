@@ -4,10 +4,11 @@ import { GoogleMap, InfoWindow, Marker } from '@react-google-maps/api';
 import { CafeContext } from '../CafeContext';
 
 const Map = () => {
+  const [isMouseOn, setIsMouseOn] = useState(false);
+  const [toggleOpen, setToggleOpen] = useState(false);
   const { geoCodes, center } = useContext(CafeContext);
 
-  console.log(geoCodes);
-
+  // Map style
   const containerStyle = {
     width: '850px',
     height: '700px',
@@ -15,13 +16,6 @@ const Map = () => {
 
   const onMouseOverHandler = () => {};
   const onClickHandler = () => {};
-
-  const icon = {
-    path: 'M 100 100 L 300 100 L 200 300 z',
-    fillColor: 'red',
-    strokeColor: 'blue',
-    strokeWidth: 3,
-  };
 
   return (
     <Wrapper>

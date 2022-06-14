@@ -25,7 +25,7 @@ const CafeProvider = ({ children }) => {
     const fetchData = async () => {
       const res = await fetch('/api/cafes');
       const { data } = await res.json();
-      console.log(data);
+      // console.log(data);
       if (data) {
         setCafes(data);
         // Extract addresses from all cafes' info

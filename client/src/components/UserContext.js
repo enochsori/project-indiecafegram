@@ -48,6 +48,8 @@ const UserProvider = ({ children }) => {
     }
   }, [currentUser]);
 
+  console.log(isLoggedIn);
+
   // [POST] Register new user info into database
   useEffect(() => {
     if (newUser) {
@@ -63,7 +65,7 @@ const UserProvider = ({ children }) => {
             },
           });
           const { data } = await res.json();
-          console.log('new user', data);
+          console.log('new user', data[0]);
           if (data[0]._id === newUser._id) {
             setUserId(data[0]._id);
           }
