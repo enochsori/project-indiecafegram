@@ -1,11 +1,10 @@
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
-import CafeDetail from './CafeDetail';
 
 const CafeList = ({ cafe, index }) => {
   const { name, address, imgSrc } = cafe;
-  const { isSelected, setIsSelected, setSelectedCafe, setCenter, geoCodes } =
+  const { setIsSelected, setSelectedCafe, setCenter, geoCodes, setIsMouseOn } =
     useContext(CafeContext);
 
   const displayDetailHandler = (event) => {
@@ -17,12 +16,15 @@ const CafeList = ({ cafe, index }) => {
     }
   };
 
-  const displayMap = (event) => {
-    setCenter(geoCodes[index]);
-  };
-
   return (
-    <CafeListItem onMouseOver={displayMap} onClick={displayDetailHandler}>
+    <CafeListItem
+      onMouseOver={() => {
+        setCenter(geoCodes[index]);
+        setIsMouseOn(true);
+      }}
+      onMouseLeave={() => setCenter(null)}
+      onClick={displayDetailHandler}
+    >
       <ContentsWrapper>
         <Name>{name}</Name>
         <Address>{address}</Address>
@@ -47,6 +49,7 @@ const CafeListItem = styled.li`
   cursor: pointer;
   &:hover {
     background-color: #fff;
+    box-shadow: 0 4px 6px rgb(32 33 36 / 28%);
   }
 `;
 

@@ -22,17 +22,16 @@ const getCurrentUser = async (req, res) => {
     const data = await db.collection("users").find({ _id }).toArray();
 
     client.close();
+    console.log("Disconnected");
 
-    data.length === 0
-      ? res.status(400).json({ status: 400, message: "Not found " })
-      : res.status(200).json({
-          status: 200,
-          data,
-        });
+    res.status(200).json({
+      status: 200,
+      data,
+    });
   } catch (err) {
     res.status(500).json({
       status: 500,
-      message: "Database connection error",
+      message: err,
     });
   }
 };
@@ -46,13 +45,14 @@ const registerNewUser = async (req, res) => {
     const db = await client.db("indiecafegram");
     await db.collection("users").insertOne(req.body);
     const data = await db.collection("users").find({ _id }).toArray();
-    data
-      ? res.status(200).json({ status: 200, message: "request complete", data })
-      : res.status(400).json({ status: 400, message: "Not found" });
+
+    res.status(200).json({ status: 200, message: "request complete", data });
+
+    client.close();
+    console.log("Disconnected");
   } catch (err) {
-    res.status(500).json({ status: 500, message: err.message });
+    res.status(500).json({ status: 500, message: err });
   }
-  client.close();
 };
 
 // Get all cafes for display
@@ -64,13 +64,12 @@ const getCafes = async (req, res) => {
     const db = await client.db("indiecafegram");
     const data = await db.collection("cafes").find().toArray();
 
-    data
-      ? res
-          .status(200)
-          .json({ status: 200, data, message: "Request completed" })
-      : res.status(400).json({ status: 400, message: "Request denied" });
+    res.status(200).json({ status: 200, data, message: "Request completed" });
+
+    client.close();
+    console.log("Disconnected");
   } catch (err) {
-    res.status(404).json({ status: 400, message: "Server error" });
+    res.status(500).json({ status: 500, message: err });
   }
 };
 
@@ -84,9 +83,12 @@ const getCommentsById = async (req, res) => {
     const db = await client.db("indiecafegram");
     const data = await db.collection("cafes").find({ _id }).toArray();
 
+    client.close();
+    console.log("Disconnected");
+
     res.status(200).json({ status: 200, data });
   } catch (err) {
-    res.status(400).json({ status: 400, message: err.message });
+    res.status(500).json({ status: 400, message: err.message });
   }
 };
 
@@ -111,15 +113,15 @@ const addComment = async (req, res) => {
     const data = await db.collection("cafes").find({ _id: cafeId }).toArray();
     console.log(data);
 
+    client.close();
+    console.log("Disconnected");
+
     // check the update result
-    result.acknowledged
-      ? res.status(200).json({ status: 200, message: "Update completed" })
-      : res.status(400).json({ status: 400, message: "Failed to update" });
+
+    res.status(200).json({ status: 200, message: "Update completed" });
   } catch (err) {
     res.status(500).json({ status: 500, message: err.message });
   }
-  client.close();
-  console.log("Disconnected");
 };
 
 // ------------------------------------------------------
@@ -132,12 +134,14 @@ const getConversations = async (req, res) => {
 
     const db = await client.db("indiecafegram");
     const data = await db.collection("conversations").find().toArray();
+
     res.status(200).json({ status: 200, data, message: "Request complete" });
+
+    client.close();
+    console.log("Disconnected");
   } catch (err) {
     res.status(500).json({ status: 500, message: err });
   }
-  client.close();
-  console.log("Disconnected");
 };
 
 // Get conversation based on cafe _id
@@ -151,11 +155,12 @@ const getConversation = async (req, res) => {
     const db = await client.db("indiecafegram");
     const data = await db.collection("conversations").find({ _id }).toArray();
     res.status(200).json({ status: 200, data, message: "Request complete" });
+
+    client.close();
+    console.log("Disconnected");
   } catch (err) {
     res.status(500).json({ status: 500, message: err });
   }
-  client.close();
-  console.log("Disconnected");
 };
 
 // Add chat message to the converstions
@@ -170,11 +175,12 @@ const addChatMessage = async (req, res) => {
       .updateOne({ _id }, { $addToSet: { text: { [name]: text, createdAt } } });
     console.log(result);
     res.status(200).json({ status: 200, message: "Request completed" });
+
+    client.close();
+    console.log("Disconnected");
   } catch (err) {
     res.status(500).json({ status: 500, message: err });
   }
-  client.close();
-  console.log("Disconnected");
 };
 
 module.exports = {

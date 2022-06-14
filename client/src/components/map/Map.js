@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { useMemo, useState, useCallback, useContext } from 'react';
-import { GoogleMap, Marker } from '@react-google-maps/api';
+import { useState, useCallback, useContext } from 'react';
+import { GoogleMap, InfoWindow, Marker } from '@react-google-maps/api';
 import { CafeContext } from '../CafeContext';
 
 const Map = () => {
-  const { geoCodes, center } = useContext(CafeContext);
+  const { geoCodes, center, isMouseOn } = useContext(CafeContext);
   const [map, setMap] = useState(null);
   const onLoad = useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center);
@@ -12,41 +12,43 @@ const Map = () => {
     setMap(map);
   }, []);
 
-  // console.log(geoCodes);
+  console.log(geoCodes);
+  console.log(center);
 
   const containerStyle = {
     width: '850px',
-    height: '900px',
+    height: '700px',
   };
   const onUnmount = useCallback((map) => {
     setMap(null);
   }, []);
 
-  return <Wrapper>map page</Wrapper>;
-  // (
-  //   <Wrapper>
-  //     <GoogleMap
-  //       mapContainerStyle={containerStyle}
-  //       center={center}
-  //       zoom={16}
-  //       //
-  //       onUnmount={onUnmount}
-  //     >
-  //       {/* {geoCodes &&
-  //         geoCodes.map((geoCode, index) => {
-  //           console.log(geoCode);
-  //           return (
-  //             <Marker
-  //               key={Math.floor(Math.random() * 400000)}
-  //               position={geoCode}
-  //               index={index}
-  //             />
-  //           );
-  //         })} */}
-  //       <Marker position={center} />
-  //     </GoogleMap>
-  //   </Wrapper>
-  // );
+  {
+    /* <Wrapper>map page</Wrapper>; */
+  }
+
+  return (
+    <Wrapper>
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        center={center}
+        zoom={12}
+        //
+        onUnmount={onUnmount}
+      >
+        {geoCodes &&
+          geoCodes.map((geoCode, index) => {
+            return (
+              <Marker
+                key={Math.floor(Math.random() * 400000000)}
+                position={geoCode}
+                index={index}
+              />
+            );
+          })}
+      </GoogleMap>
+    </Wrapper>
+  );
 };
 
 export default Map;
@@ -56,5 +58,5 @@ const Wrapper = styled.div`
   height: 950px;
   position: fixed;
   top: 70px;
-  border: 1px solid red;
+  box-shadow: 0 4px 6px rgb(32 33 36 / 28%);
 `;

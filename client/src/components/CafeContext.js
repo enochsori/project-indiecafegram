@@ -1,4 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import { UserContext } from './UserContext';
 import Geocode from 'react-geocode';
 
 // react geocode setting with api key from env
@@ -8,12 +9,14 @@ Geocode.setApiKey(REACT_APP_GOOGLE_MAPS_API_KEY);
 export const CafeContext = createContext(null);
 
 const CafeProvider = ({ children }) => {
+  const { isLoggedIn } = useContext(UserContext);
   const [cafes, setCafes] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
+  const [isMouseOn, setIsMouseOn] = useState(false);
   const [selectedCafe, setSelectedCafe] = useState(null);
   const [newComment, setNewComment] = useState(null);
   const [geoCodes, setGeoCodes] = useState([]);
-  const [center, setCenter] = useState({ lat: 45.501689, lng: -73.567256 });
+  const [center, setCenter] = useState(null);
 
   const [chatConversation, setChatConverstation] = useState(null);
 
@@ -24,24 +27,24 @@ const CafeProvider = ({ children }) => {
     const fetchData = async () => {
       const res = await fetch('/api/cafes');
       const { data } = await res.json();
-      setCafes(data);
+      console.log(data);
       if (data) {
+        setCafes(data);
         // Extract addresses from all cafes' info
         const locations = data.map((cafe) => cafe.address);
-        // console.log(locations);
 
         // Find geocode to mark cafe locations in map
-        // let geoArray = [];
-        // locations.map(async (loc) => {
-        //   const res = await Geocode.fromAddress(loc);
-        //   const data = await res.results[0].geometry.location;
-        //   geoArray.push(data);
-        // });
-        // setGeoCodes(geoArray);
+        let geoArray = [];
+        locations.map(async (loc) => {
+          const res = await Geocode.fromAddress(loc);
+          const data = await res.results[0].geometry.location;
+          geoArray.push(data);
+        });
+        setGeoCodes(geoArray);
       }
     };
     fetchData();
-  }, []);
+  }, [isLoggedIn]);
 
   return (
     <CafeContext.Provider
@@ -55,10 +58,14 @@ const CafeProvider = ({ children }) => {
         newComment,
         setNewComment,
         geoCodes,
+        setGeoCodes,
         center,
         setCenter,
         chatConversation,
         setChatConverstation,
+
+        isMouseOn,
+        setIsMouseOn,
       }}
     >
       {children}

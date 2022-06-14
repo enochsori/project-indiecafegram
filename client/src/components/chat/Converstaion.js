@@ -20,8 +20,10 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 20px;
+  border-radius: 5px;
   &:hover {
     background-color: rgb(245, 243, 243);
+    box-shadow: 0 4px 6px rgb(32 33 36 / 28%);
   }
 `;
 const CafeImg = styled.img`

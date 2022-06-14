@@ -1,7 +1,4 @@
-import { onAuthStateChanged } from 'firebase/auth';
 import { createContext, useEffect, useState } from 'react';
-import app from '../components/authentication/firebase';
-import { getAuth } from 'firebase/auth';
 
 export const UserContext = createContext(null);
 
@@ -11,7 +8,6 @@ const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [newUser, setNewUser] = useState(null);
   const [userId, setUserId] = useState(null);
-  const auth = getAuth();
 
   useEffect(() => {
     const savedId = window.localStorage.getItem('userId');
@@ -20,34 +16,30 @@ const UserProvider = ({ children }) => {
     }
   }, []);
 
+  // [Login process]
+  // Fetch to grab current user info from db
+  // Set currentUser state to fire another useEffect to change login status
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        if (user.uid) {
-          // Fetch to get current user info from mongoDB
-          const fetchUserInfo = async () => {
-            try {
-              const res = await fetch(`/api/users/${user.uid}`);
-              const userData = await res.json();
-              if (userData) {
-                const { data } = userData;
-                setCurrentUser(data[0]);
-              }
-            } catch (err) {
-              console.log('database error');
-            }
-          };
-          fetchUserInfo();
+    if (userId) {
+      // Fetch to get current user info from mongoDB
+      const fetchUserInfo = async () => {
+        try {
+          const res = await fetch(`/api/users/${userId}`);
+          const userData = await res.json();
+          if (userData) {
+            const { data } = userData;
+            setCurrentUser(data[0]);
+          }
+        } catch (err) {
+          console.log('database error');
+          setIsLoggedIn(false);
+          setCurrentUser(null);
+          setStatus('loading');
         }
-      } else {
-        setIsLoggedIn(false);
-        setCurrentUser(null);
-        setStatus('loading');
-      }
-    });
+      };
+      fetchUserInfo();
+    }
   }, [userId]);
-
-  console.log(isLoggedIn, currentUser);
 
   useEffect(() => {
     if (currentUser) {
@@ -59,7 +51,7 @@ const UserProvider = ({ children }) => {
   // [POST] Register new user info into database
   useEffect(() => {
     if (newUser) {
-      // console.log(newUser);
+      console.log(newUser);
       const newUserRegisterFetch = async () => {
         try {
           const res = await fetch('/api/new-user', {

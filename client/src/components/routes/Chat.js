@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { ChatContext } from '../ChatContext';
 import Conversation from '../chat/Converstaion';
 import Message from '../chat/Message';
-import { async } from '@firebase/util';
 
 const Chat = () => {
   const scrollRef = useRef();
@@ -15,7 +14,6 @@ const Chat = () => {
     conversations,
     setConversations,
     setCurrentChat,
-    currentUser,
     currentChat,
     newMessage,
     setNewMessage,
@@ -23,8 +21,7 @@ const Chat = () => {
     setMessages,
   } = useContext(ChatContext);
 
-  console.log(user, currentUser);
-
+  console.log(newChat);
   // Get current user
   useEffect(() => {
     const getUser = async () => {
@@ -32,9 +29,9 @@ const Chat = () => {
         const _id = window.localStorage.getItem('userId');
         const res = await fetch(`/api/users/${_id}`);
         const userData = await res.json();
-        console.log(userData);
         if (userData) {
           const { data } = userData;
+          console.log(data[0]);
           setUser(data[0]);
         }
       } catch (err) {
@@ -47,55 +44,62 @@ const Chat = () => {
   // Get all chat group info
   useEffect(() => {
     const getConversations = async () => {
-      const res = await fetch('/api/conversations');
-      const { data } = await res.json();
-      setConversations(data);
+      try {
+        const res = await fetch('/api/conversations');
+        const { data } = await res.json();
+        setConversations(data);
+      } catch (err) {
+        console.log(err);
+      }
     };
     getConversations();
   }, []);
 
   // get messages of selected chat group
   useEffect(() => {
-    const _id = currentChat._id;
-    const getMessagesById = async () => {
-      const res = await fetch(`/api/conversations/${_id}`);
-      const chatData = await res.json();
-      if (chatData) {
-        const { data } = chatData;
-        console.log(data);
-        setMessages(data[0].text);
-      }
-    };
-    getMessagesById();
-  }, [currentChat]);
+    if (currentChat) {
+      const _id = currentChat._id;
+      const getMessagesById = async () => {
+        try {
+          const res = await fetch(`/api/conversations/${_id}`);
+          const chatData = await res.json();
+          if (chatData) {
+            const { data } = chatData;
+
+            setMessages(data[0].text);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      };
+      getMessagesById();
+    }
+  }, [currentChat, newChat]);
 
   // Submit new Chat to BE and database
   const submitHandler = async (event) => {
     event.preventDefault();
-
-    console.log(currentUser);
-
     const now = new Date();
-
-    try {
-      const res = await fetch('/api/add-chat-message', {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          _id: currentChat._id,
-          name: user.name,
-          text: newMessage,
-          createdAt: now,
-        }),
-      });
-      const result = await res.json();
-      console.log(result);
-      inputRef.current.value = '';
-      setNewChat(result);
-    } catch (err) {
-      console.log(err);
+    if (user) {
+      try {
+        const res = await fetch('/api/add-chat-message', {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            _id: currentChat._id,
+            name: user.name,
+            text: newMessage,
+            createdAt: now,
+          }),
+        });
+        const result = await res.json();
+        inputRef.current.value = '';
+        setNewChat(result);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
 
@@ -109,7 +113,7 @@ const Chat = () => {
       <ChatMenu>
         <ChatMenuWrapper>
           <ChatMenuInput placeholder='Search for chat groups' />
-          {conversations &&
+          {conversations ? (
             conversations.map((conv) => (
               <div
                 key={Math.floor(Math.random() * 4000000)}
@@ -117,46 +121,53 @@ const Chat = () => {
               >
                 <Conversation conversation={conv} />
               </div>
-            ))}
+            ))
+          ) : (
+            <div>loading..</div>
+          )}
         </ChatMenuWrapper>
       </ChatMenu>
 
       {/* Main chat box */}
       <ChatBox>
-        <ChatBoxWrapper>
-          {currentChat ? (
-            <>
-              <ChatBoxTop>
-                {messages.map((message) => (
-                  <div
-                    key={Math.floor(Math.random() * 4000000)}
-                    ref={scrollRef}
-                  >
-                    <Message
+        {!messages ? (
+          <div>loading..</div>
+        ) : (
+          <ChatBoxWrapper>
+            {currentChat ? (
+              <>
+                <ChatBoxTop>
+                  {messages.map((message) => (
+                    <div
                       key={Math.floor(Math.random() * 4000000)}
-                      message={message}
-                    />
-                  </div>
-                ))}
-              </ChatBoxTop>
+                      ref={scrollRef}
+                    >
+                      <Message
+                        key={Math.floor(Math.random() * 4000000)}
+                        message={message}
+                      />
+                    </div>
+                  ))}
+                </ChatBoxTop>
 
-              <ChatBoxBottom onSubmit={submitHandler}>
-                <ChatMessageInput
-                  ref={inputRef}
-                  onChange={(event) => {
-                    setNewMessage(event.target.value);
-                  }}
-                  placeholder='Write something..'
-                ></ChatMessageInput>
-                <ChatSumbitButton>Submit</ChatSumbitButton>
-              </ChatBoxBottom>
-            </>
-          ) : (
-            <NoConversationText>
-              Choose a cafe chat group to start a chat
-            </NoConversationText>
-          )}
-        </ChatBoxWrapper>
+                <ChatBoxBottom onSubmit={submitHandler}>
+                  <ChatMessageInput
+                    ref={inputRef}
+                    onChange={(event) => {
+                      setNewMessage(event.target.value);
+                    }}
+                    placeholder='Write something..'
+                  ></ChatMessageInput>
+                  <ChatSumbitButton>Submit</ChatSumbitButton>
+                </ChatBoxBottom>
+              </>
+            ) : (
+              <NoConversationText>
+                Choose a cafe chat group to start a chat
+              </NoConversationText>
+            )}
+          </ChatBoxWrapper>
+        )}
       </ChatBox>
     </Wrapper>
   );

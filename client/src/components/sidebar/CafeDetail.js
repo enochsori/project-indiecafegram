@@ -5,7 +5,8 @@ import { UserContext } from '../UserContext';
 import CommentsList from './CommentsList';
 import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 import { MdOutlineCancelPresentation } from 'react-icons/md';
-
+import { BsFillPhoneVibrateFill } from 'react-icons/bs';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 const CafeDetail = () => {
   const {
     selectedCafe,
@@ -61,6 +62,12 @@ const CafeDetail = () => {
     event.target.value = '';
   };
 
+  // Make forms using a regular expression
+  const phoneNumber = phone
+    .substr(2)
+    .replace(/^(\d{0,3})(\d{0,3})(\d{0,4})$/g, '$1-$2-$3')
+    .replace(/\-{1,2}$/g, '');
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -69,7 +76,13 @@ const CafeDetail = () => {
       <ContentsWrapper>
         <Name>{name}</Name>
         <Address>{address}</Address>
-        <Phone>{phone}</Phone>
+        <PhoneWrapper>
+          <StyledBsFillPhoneVibrateFill />
+          <Phone>{phoneNumber}</Phone>
+        </PhoneWrapper>
+        <Web target='_blank' href={webSite}>
+          <StyledFaExternalLinkAlt />
+        </Web>
       </ContentsWrapper>
 
       <StyledMdOutlineCancelPresentation onClick={closeHandler} />
@@ -115,30 +128,66 @@ const Wrapper = styled.div`
 const ImageWrapper = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 45%;
-  overflow: hidden;
-  margin-bottom: 15px;
+  height: 300px;
 `;
 const Image = styled.img`
   width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  height: 250px;
+  object-fit: scale-down;
 `;
 
 const ContentsWrapper = styled.div`
   padding: 15px;
   display: flex;
   flex-direction: column;
+  position: relative;
+`;
+
+const PhoneWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const StyledBsFillPhoneVibrateFill = styled(BsFillPhoneVibrateFill)`
+  color: #ff6f3c;
+  font-size: 1.3rem;
+  margin-right: 5px;
 `;
 
 const Name = styled.span`
   font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 3px;
+  margin-right: 20px;
+`;
+
+const Phone = styled.span`
+  font-weight: bold;
+  color: gray;
+`;
+
+const Address = styled.span`
+  font-size: 13px;
+  font-weight: bold;
+  color: gray;
   margin-bottom: 5px;
 `;
-const Address = styled.span``;
-const Phone = styled.span``;
-const Web = styled.span``;
+
+const StyledFaExternalLinkAlt = styled(FaExternalLinkAlt)`
+  font-size: 1.5rem;
+`;
+const Web = styled.a`
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  position: absolute;
+  right: 50px;
+  &:hover {
+    color: #ff6f3c;
+  }
+`;
 
 const StyledMdOutlineCancelPresentation = styled(MdOutlineCancelPresentation)`
   position: absolute;
@@ -148,11 +197,11 @@ const StyledMdOutlineCancelPresentation = styled(MdOutlineCancelPresentation)`
   border-radius: 20%;
   height: 35px;
   width: 35px;
-  color: #f8f8f8;
+  color: black;
   cursor: pointer;
   transition: all 200ms ease-in;
   &:hover {
-    color: black;
+    color: #ff6f3c;
     font-size: 1.4rem;
   }
 `;

@@ -1,4 +1,4 @@
-import { useNavigate, Route, NavLink } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { UserContext } from '../UserContext';
@@ -7,10 +7,12 @@ import { getAuth, signOut } from 'firebase/auth';
 import { IoPersonCircleOutline } from 'react-icons/io5';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { IoChatbubble } from 'react-icons/io5';
+import { ChatContext } from '../ChatContext';
 const Header = () => {
-  const { currentUser, setStatus, setIsLoggedIn, setUserId } =
+  const { currentUser, setStatus, setIsLoggedIn, setUserId, setCurrentUser } =
     useContext(UserContext);
-  const { setIsSelected } = useContext(CafeContext);
+  const { setIsSelected, setCenter } = useContext(CafeContext);
+  const { setCurrentChat } = useContext(ChatContext);
   const auth = getAuth();
   const navigate = useNavigate();
 
@@ -19,10 +21,13 @@ const Header = () => {
     await signOut(auth);
     // Delete localstorage data
     window.localStorage.removeItem('userId');
+    setCurrentUser(null);
     setUserId(null);
     setIsLoggedIn(false);
     setStatus('loading');
     setIsSelected(false);
+    setCurrentChat(null);
+    setCenter(null);
     navigate('/');
   };
 
@@ -202,5 +207,3 @@ const ChatLable = styled.span`
 const StyledAiOutlineLogout = styled(AiOutlineLogout)`
   font-size: 1.8rem;
 `;
-
-const menuWrapper = styled.ul``;

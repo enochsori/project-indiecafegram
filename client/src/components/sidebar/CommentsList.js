@@ -5,16 +5,16 @@ import { CafeContext } from '../CafeContext';
 
 const CommentsList = ({ _id }) => {
   const [comment, setComment] = useState(null);
-  const { newComment, isSelected } = useContext(CafeContext);
+  const { newComment } = useContext(CafeContext);
 
+  // Get comments from db
   useEffect(() => {
-    const fechData = async () => {
+    const getComments = async () => {
       const res = await fetch(`/api/comment/${_id}`);
       const { data } = await res.json();
-      // console.log(data[0].comment);
       setComment(data[0].comment);
     };
-    fechData();
+    getComments();
   }, [_id, newComment]);
 
   return (

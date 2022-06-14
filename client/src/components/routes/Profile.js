@@ -6,7 +6,7 @@ const Profile = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const _id = window.localStorage.getId('userId');
+    const _id = window.localStorage.getItem('userId');
     const getUser = async () => {
       const res = await fetch(`/api/users/${_id}`);
       const { data } = await res.json;
