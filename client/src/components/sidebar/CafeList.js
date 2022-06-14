@@ -4,15 +4,21 @@ import { CafeContext } from '../CafeContext';
 
 const CafeList = ({ cafe, index }) => {
   const { name, address, imgSrc } = cafe;
-  const { setIsSelected, setSelectedCafe, setCenter, geoCodes, setIsMouseOn } =
-    useContext(CafeContext);
+  const {
+    setIsSelected,
+    setSelectedCafe,
+    setCenter,
+
+    geoCodes,
+    setIsMouseOn,
+  } = useContext(CafeContext);
 
   const displayDetailHandler = (event) => {
     if (name !== null) {
       setTimeout(() => {
         setIsSelected(true);
         setSelectedCafe(cafe);
-      }, 150);
+      }, 250);
     }
   };
 
@@ -20,9 +26,7 @@ const CafeList = ({ cafe, index }) => {
     <CafeListItem
       onMouseOver={() => {
         setCenter(geoCodes[index]);
-        setIsMouseOn(true);
       }}
-      onMouseLeave={() => setCenter(null)}
       onClick={displayDetailHandler}
     >
       <ContentsWrapper>

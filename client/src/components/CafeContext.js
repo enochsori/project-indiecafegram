@@ -12,17 +12,15 @@ const CafeProvider = ({ children }) => {
   const { isLoggedIn } = useContext(UserContext);
   const [cafes, setCafes] = useState(null);
   const [isSelected, setIsSelected] = useState(false);
-  const [isMouseOn, setIsMouseOn] = useState(false);
   const [selectedCafe, setSelectedCafe] = useState(null);
   const [newComment, setNewComment] = useState(null);
   const [geoCodes, setGeoCodes] = useState([]);
   const [center, setCenter] = useState(null);
-
   const [chatConversation, setChatConverstation] = useState(null);
 
   // console.log(cafes);
 
-  // Get all the cafe list from mongoDB
+  // Get all the cafe list from mongoDB after login
   useEffect(() => {
     const fetchData = async () => {
       const res = await fetch('/api/cafes');
@@ -41,6 +39,7 @@ const CafeProvider = ({ children }) => {
           geoArray.push(data);
         });
         setGeoCodes(geoArray);
+        setCenter(geoArray[0]);
       }
     };
     fetchData();
@@ -63,9 +62,6 @@ const CafeProvider = ({ children }) => {
         setCenter,
         chatConversation,
         setChatConverstation,
-
-        isMouseOn,
-        setIsMouseOn,
       }}
     >
       {children}

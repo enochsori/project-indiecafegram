@@ -27,7 +27,7 @@ const Wrapper = styled.li`
 
 const ContentWrapper = styled.div`
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
   height: 100%;
   background: #407088;

@@ -83,6 +83,7 @@ const Wrapper = styled.div`
   left: 0;
   background-color: #fff;
   z-index: 100;
+  box-shadow: 0 4px 6px rgb(32 33 36 / 28%);
 `;
 const ContentWrapper = styled.div`
   z-index: 90;
@@ -94,6 +95,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   display: flex;
   align-items: flex-end;
+  padding-bottom: 7px;
 `;
 const LogoWrapper = styled.div`
   flex: 6;

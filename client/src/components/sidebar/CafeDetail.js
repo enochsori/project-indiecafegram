@@ -15,6 +15,8 @@ const CafeDetail = () => {
     setSelectedCafe,
     newComment,
     setNewComment,
+    setGeoCode,
+    geoCodeBack,
   } = useContext(CafeContext);
   const [userInput, setUserInput] = useState(null);
 
@@ -30,6 +32,7 @@ const CafeDetail = () => {
   const closeHandler = () => {
     setIsSelected(false);
     setSelectedCafe(false);
+    setGeoCode(geoCodeBack);
   };
 
   const updateCommentFetch = async () => {
@@ -123,6 +126,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 4px 6px rgb(32 33 36 / 28%);
 `;
 
 const ImageWrapper = styled.div`
@@ -135,7 +139,7 @@ const Image = styled.img`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 250px;
-  object-fit: scale-down;
+  object-fit: fill;
 `;
 
 const ContentsWrapper = styled.div`
@@ -184,6 +188,7 @@ const Web = styled.a`
   color: black;
   position: absolute;
   right: 50px;
+  transition: all 200ms ease-in;
   &:hover {
     color: #ff6f3c;
   }
@@ -210,6 +215,7 @@ const CommentWrapper = styled.div`
   flex-direction: column;
   height: 500px;
   overflow: scroll;
+  scroll-behavior: smooth;
   padding: 15px;
 `;
 

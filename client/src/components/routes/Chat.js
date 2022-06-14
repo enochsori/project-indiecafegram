@@ -21,8 +21,22 @@ const Chat = () => {
     setMessages,
   } = useContext(ChatContext);
 
-  console.log(newChat);
+  // console.log(newChat);
   // Get current user
+  // Get all chat group info
+  useEffect(() => {
+    const getConversations = async () => {
+      try {
+        const res = await fetch('/api/conversations');
+        const { data } = await res.json();
+        setConversations(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getConversations();
+  }, []);
+
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -39,21 +53,7 @@ const Chat = () => {
       }
     };
     getUser();
-  }, []);
-
-  // Get all chat group info
-  useEffect(() => {
-    const getConversations = async () => {
-      try {
-        const res = await fetch('/api/conversations');
-        const { data } = await res.json();
-        setConversations(data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getConversations();
-  }, []);
+  }, [conversations]);
 
   // get messages of selected chat group
   useEffect(() => {
@@ -104,7 +104,13 @@ const Chat = () => {
   };
 
   useEffect(() => {
-    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (currentChat) {
+      scrollRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'nearest',
+      });
+    }
   }, [conversations]);
 
   return (
@@ -136,12 +142,9 @@ const Chat = () => {
           <ChatBoxWrapper>
             {currentChat ? (
               <>
-                <ChatBoxTop>
+                <ChatBoxTop ref={scrollRef}>
                   {messages.map((message) => (
-                    <div
-                      key={Math.floor(Math.random() * 4000000)}
-                      ref={scrollRef}
-                    >
+                    <div key={Math.floor(Math.random() * 4000000)}>
                       <Message
                         key={Math.floor(Math.random() * 4000000)}
                         message={message}
@@ -187,6 +190,7 @@ const ChatMenu = styled.div`
   /* border: 1px solid black; */
   height: 780px;
   overflow-y: scroll;
+  scroll-behavior: smooth;
   background-color: #fff;
 `;
 const ChatMenuWrapper = styled.div``;
