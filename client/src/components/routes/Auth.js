@@ -84,7 +84,10 @@ const Auth = () => {
       // console.log(user.uid);
       setUserId(user.uid);
 
-      setNewUser({ name: null, email: user.email, _id: user.uid });
+      // const idx = user.email.indexOf('@');
+      // const name = user.email.slice(0, idx);
+
+      setNewUser({ name: user.email, email: user.email, _id: user.uid });
     } catch (err) {
       setError(err);
     }

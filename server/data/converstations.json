@@ -1,0 +1,634 @@
+[
+  {
+    "name": "Café Pic Macaya",
+    "webSite": "http://cafepicmacaya.com/",
+    "imgSrc": "/images/001.jpeg",
+    "_id": "+14509349955",
+    "text": [
+      {
+        "unknown": "Cozy local coffee shop. Named after one of Haiti's national parks!"
+      },
+      {
+        "a4568": "I really like the atmosphere, good coffee, and nice interior. This is a good place to study or chill with friends. The drinks and foods were all tasty and worthwhile. If you’re up for a fresh place with beautiful architecture then this is a must to visit."
+      },
+      {
+        "Tony": "This place is amazing! They offered the best coffee and showed the best attitude to its costumers. Internet connection is very fast and is unlimited as well. This place is indeed perfect for studying and chilling out. It was very quiet and air-conditioned. I just want to keep coming back to this place. Thank you!"
+      },
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ]
+  },
+  {
+    "name": "Café Nocturne",
+    "webSite": "http://nocturne.coffee/",
+    "_id": "+15146796037",
+    "text": [
+      {
+        "Jassie": "Will go again.I only popped in to get take-away cappuccinos, but I was struck by how friendly the service was. The cappuccinos were wonderful too! And very well priced."
+      },
+      {
+        "Jenny": "I would probably say that this coffee shop is a must for coffee lovers! The service was good, and the variety of coffee served in the ambiance was very satisfying. If you like your coffee shops, then this is a must-visit! We will be back again!"
+      },
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/002.jpeg"
+  },
+  {
+    "name": "Pikolo Espresso Bar",
+    "webSite": "http://pikoloespresso.com/",
+    "_id": "+15145086800",
+    "text": [
+      {
+        "Josh": "This coffee shop is my favorite place to hang and do my works. I really like this place because it has a good ambiance and not too crowded as well. The coffee and pastries that they had were so delicious. The barista was so friendly and pleasant to talk with. One thing that I got fascinated by this place. They had the most affordable and delicious coffee in town."
+      },
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/003.jpeg"
+  },
+  {
+    "name": "Insiders - Café & Cowork Crescent",
+    "webSite": "https://www.insiderscafe.com/",
+    "_id": "+15149802015",
+    "text": [
+      {
+        "Jean": "If you’re looking for a place where to relax and read some novels or whatever, this coffee shop would be the best. They have the best coffee available and even some fresh baked goods as well. The ambiance of this shop was so relaxing, and the staffs are highly capable. I could not ask for more because everything that I needed was provided. Well done, guys! Keep making great coffee and pastries!"
+      },
+      {
+        "sugar": "Unquestionably, the best coffee shop in the area! I’m so thankful that finally, I was able to find this spot for some good coffee just in time. The atmosphere inside this coffee shop was very vibrant and relaxing. I will definitely rate them a five-star for everything that they provided. Truly amazing! Thank you so much, guys!"
+      },
+
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/004.jpeg"
+  },
+  {
+    "name": "Cafe Aunja",
+    "webSite": "http://aunja.com/",
+    "_id": "+15149148337",
+    "text": [
+      {
+        "Ruah": "This place is very different and well organized according to other places. The food is amazing, music of your choice. The owner is very sweet… Ever the best café. The cost is fair for everything and the atmosphere is good."
+      },
+      {
+        "Eden": "This coffee shop has it all. The ambiance, interior designs, good coffee, tasty foods, and fast wi-fi connection. Prices are a bit high but once you already taste it, you understand why. It is simply one of the best and my favorites coffee shop in town. Overall, it’s a good shop for studying and relaxing. Highly recommended!"
+      },
+
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/005.jpeg"
+  },
+  {
+    "name": "Anticafe Montreal - Place Des Arts",
+    "webSite": "http://instagram.com/anticafe_montreal",
+    "_id": "+15145009045",
+    "text": [
+      {
+        "Smile": "A unique coffee shop to study and read books. No loud noises which will help you a lot to concentrate on what you do. They do have a variety of food and drinks you can select from. I honestly love the great interior all over the place. Trust me! You will never be disappointed for sure! A memorable place to relax."
+      },
+      {
+        "Sky": "Excellent espresso, pastries, hot chocolate, location, and ambiance. This coffee shop is indeed a great place to kill your time, do business, and to study as well. The coffees and hot chocolates they had was so delicious. The owner was so welcoming and friendly. The place was so cozy. The decorations were so cute."
+      },
+
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/006.jpeg"
+  },
+  {
+    "name": "Crew Collective & Cafe",
+    "webSite": "https://crewcollectivecafe.com/",
+    "_id": "+15142857095",
+    "text": [
+      {
+        "Vie": "Amazing coffee and the owner is just wonderful. He clearly knows his stuff and they roast their own beans. Good prices, cute atmosphere. The vanilla latte will never disappoint!"
+      },
+      {
+        "Jay": "Great staff, great owner, great coffee. The atmosphere is cozy and nice, certainly my absolute favorite go-to spot as a local. I’ve gone here every day for the past three months, every single cup of coffee hits the spot."
+      },
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/007.jpeg"
+  },
+  {
+    "name": "Café 1880",
+    "webSite": "http://www.cafe1880.com/",
+    "_id": "+15145077225",
+    "text": [
+      {
+        "Lucy": "This is a great coffee shop/bar combo that you can spend a lot of time hanging out in without knowing where the time went. I do like the coffee shop itself though! Nice place to study and just catch up on reading."
+      },
+
+      {
+        "unknown": "hey does anyone has idea of price here?!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "a4568": "affordable!! try buddy!! ",
+        "createdAt": "1 month ago"
+      },
+      {
+        "Tony": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "unknown": "You should try  one of their summer menu!",
+        "createdAt": "1 month ago"
+      },
+      {
+        "VI": "Could I bring my laptop to do something there?",
+        "createdAt": "6 days ago"
+      },
+      {
+        "AD": "you can bring your desktop, too lol",
+        "createdAt": "6 days ago"
+      },
+      {
+        "MI": "Yes they have planty space!",
+        "createdAt": "6 days ago"
+      }
+    ],
+    "imgSrc": "/images/008.jpeg"
+  },
+  {
+    "name": "Café Olimpico - Mile End",
+    "webSite": "http://www.cafeolimpico.com/",
+    "_id": "+15144950746",
+    "text": [
+      {
+        "Gaga": "Excellent coffee though the most expensive of the up-market expresso drinks. Indoor seating is generally good if available. Will definitely be making a return trip."
+      },
+      {
+        "Rath": "Best coffee in the east side. If you are nearby and craving for some great coffee, this is where you go. I love the industrial vibe of the place and they have some bakery collection but not really fresh. The coffee is amazing though and they have good good outdoor and indoor seating. Latte is great and the prices are economic. Give it a try."
+      }
+    ],
+    "imgSrc": "/images/009.jpeg"
+  },
+  {
+    "name": "La Finca café & marché local",
+    "webSite": "http://www.lafinca.ca/",
+    "_id": "+15149038911",
+    "text": [
+      {
+        "Ray": "Unpretentious coffee shop with pour over prices 2 dollars cheaper than most local coffee shops around the area. Love it! The guys working the coffee bar were super friendly and helpful! Had a cortado with hemp milk! Local roaster. The shop feels too commercial. Great quality coffee and nice people here."
+      },
+      {
+        "Mine": "One of the best coffee shops in (CN). I drive 30 minutes (at least) across town to come to this place. Friendly, knowledgeable staff that knows their coffee. Espresso and pour over brews are always perfect. This was the first place I had nitro cold brew coffee years ago, and it is still my favorite of all the ones I have had."
+      }
+    ],
+    "imgSrc": "/images/010.jpeg"
+  },
+  {
+    "name": "Cafe Myriade",
+    "webSite": "https://cafemyriade.com/",
+    "_id": "+15149391717",
+    "text": [
+      {
+        "Cavin": "Knowledgeable about coffee and product. Gorgeously designed inside cafe and plenty of outside seating. Set of bags for entertainment. Parking lot. Great place to relax between brewery and studio/gallery exploration. Double shots in espresso drinks, nitro on tap and roasted coffee by the pound to take home."
+      }
+    ],
+    "imgSrc": "/images/011.jpeg"
+  },
+  {
+    "name": "180g café - disquaire",
+    "webSite": "https://www.facebook.com/le180g",
+    "_id": "+14382905002",
+    "text": [
+      {
+        "Chris": "Fun place with great coffee. We love the Guatemala and Costa Rica roasts. Took some canned cold brew home and we really liked the green can with hemp oil, and yellow Horchata can with vanilla and cinnamon."
+      },
+      {
+        "Dora": " Finally the time has come. I am so happy they added extra tables outside so I can spend more time here. Love the place!"
+      }
+    ],
+    "imgSrc": "/images/012.jpeg"
+  },
+  {
+    "name": "CARDYNAL - Espresso Bar",
+    "webSite": "https://www.facebook.com/CardynalEspresso/",
+    "_id": "+15144192765",
+    "text": [
+      {
+        "Sussanne": "CSN) is located near other great eating places so definitely a great place to end a meal! The atmosphere was great along with the customer service. (CSN) is one of the top roasters in the nation so the coffee is expectedly awesome!"
+      },
+      {
+        "COREA": "One of my favourite cafes in (CN). Huge roller doors with outdoor seating. Also have tables and benches at the perfect standing height for those who like standing desks. Super awesome staff too ❤️"
+      }
+    ],
+    "imgSrc": "/images/013.jpeg"
+  },
+  {
+    "name": "Café Pista",
+    "webSite": "http://www.cafepista.com/",
+    "_id": "+15149038257",
+    "text": [
+      {
+        "Soo": "Great place. Amazing cafe. Extremely nice people. I wanted to buy a mug but they were out. They gave me one of the serving cups. I would give 6 stars if I could. Highly recommend!!!"
+      }
+    ],
+    "imgSrc": "/images/014.jpeg"
+  },
+  {
+    "name": "Céramic Café Studio Montréal",
+    "webSite": "https://leccs.com/boutique",
+    "_id": "+15148481119",
+    "text": [
+      {
+        "Kate": "Great coffee and a wonderful space for meeting up with friends. Don’t bring your laptop cause this place is for coffee and contemplation."
+      },
+      {
+        "Gorge": "My absolute favorite coffee bar. Their nitro cold brew is amazeballs. I had forgot my wallet once and they comped my coffee for me. Super great service and staff!"
+      }
+    ],
+    "imgSrc": "/images/015.jpeg"
+  },
+  {
+    "name": "Café SAT",
+    "webSite": "http://sat.qc.ca/en/sat-cafe",
+    "_id": "+15148442033",
+    "text": [
+      {
+        "YOUNGE": "Great coffee, good people, good vibes. They allows dogs outside on the patio and service dogs inside. It’s a good place to go inside and get a little work done on the laptop. Oh, and good beer too!"
+      },
+      {
+        "Anna": "My FAV neighborhood coffee shop! I go here for quick drinks on-the-go and also to buy some of their yummy beans. They even have the option of grinding them for you there."
+      }
+    ],
+    "imgSrc": "/images/016.jpeg"
+  },
+  {
+    "name": "September Cafe",
+    "webSite": "http://www.septembersurf.com/",
+    "_id": "+15149345000",
+    "text": [
+      {
+        "Becky": "I love this place. I come here frequently to work and the staff is just so friendly and welcoming. Plenty of seating (and parking), a really cool bar in the center of the space and tasty coffee, of course!"
+      },
+      {
+        "Betheny": "Great coffee, wonderful atmosphere, fantastic baristas. They’ve got more than your typical selection of coffee drinks, including nitro coffee, and canned cold brew. They also have non-coffee goodies. It’s spacious and quiet inside making it a great place to hang out."
+      }
+    ],
+    "imgSrc": "/images/017.jpeg"
+  },
+  {
+    "name": "Café Odessa",
+    "webSite": "https://facebook.com/cafeodessa/",
+    "_id": "+15145156917",
+    "text": [
+      {
+        "LOL": "Great coffee shop! Staff is always helpful and friendly and the coffee is great, especially the cold brew. The outdoor seating is perfect when the weather’s nice."
+      },
+      {
+        "peace": "Thank you guys you just made my day with the wonderful cup of coffee. love it!! "
+      }
+    ],
+    "imgSrc": "/images/018.jpeg"
+  },
+  {
+    "name": "Shaughnessy Café",
+    "webSite": "http://shaughnessycafe.com/",
+    "_id": "+14383869890",
+    "text": [{}],
+    "imgSrc": "/images/019.jpeg"
+  },
+  {
+    "name": "Casa Del Popolo",
+    "webSite": "https://casadelpopolo.com/",
+    "_id": "+15142840122",
+    "text": [{}],
+    "imgSrc": "/images/020.jpeg"
+  },
+  {
+    "name": "diff.",
+    "webSite": "http://cafedifferance.ca/",
+    "_id": "+15144195415",
+    "text": [{}],
+    "imgSrc": "/images/021.jpeg"
+  },
+  {
+    "name": "Tunnel Espresso Bar",
+    "webSite": "http://www.tunnelespressobar.ca/",
+    "_id": "+15148825288",
+    "text": [{}],
+    "imgSrc": "/images/022.jpeg"
+  },
+  {
+    "name": "Café Humble Lion (Sherbrooke)",
+    "webSite": "http://shop.humblelion.com/",
+    "_id": "+15148445466",
+    "text": [{}],
+    "imgSrc": "/images/023.jpeg"
+  },
+  {
+    "name": "MELK Café Monkland",
+    "webSite": "http://melk-cafe.myshopify.com/",
+    "_id": "+15145085789",
+    "text": [{}],
+    "imgSrc": "/images/024.jpeg"
+  },
+  {
+    "name": "Café Orr",
+    "webSite": "https://www.instagram.com/cafeorr/",
+    "_id": "+15145442233",
+    "text": [{}],
+    "imgSrc": "/images/025.jpeg"
+  },
+  {
+    "name": "Café OUI MAIS NON",
+    "webSite": "http://www.cafeouimaisnon.com/",
+    "_id": "+15145075387",
+    "text": [{}],
+    "imgSrc": "/images/026.jpeg"
+  },
+  {
+    "name": "Kahwa Café",
+    "webSite": "+14388369708",
+    "_id": "+14388369708",
+    "text": [{}],
+    "imgSrc": "/images/027.jpeg"
+  },
+  {
+    "name": "NELLI",
+    "webSite": "http://nellicafevin.com/",
+    "_id": "+15147884000",
+    "text": [{}],
+    "imgSrc": "/images/028.jpeg"
+  },
+  {
+    "name": "Columbus Café & Co",
+    "webSite": "https://www.columbuscafe.com/",
+    "_id": "+15144191787",
+    "text": [{}],
+    "imgSrc": "/images/029.jpeg"
+  },
+  {
+    "name": "Parma Café",
+    "webSite": "http://www.parmacafe.ca/",
+    "_id": "+15148790000",
+    "text": [{}],
+    "imgSrc": "/images/030.jpeg"
+  },
+  {
+    "name": "Stash Café",
+    "webSite": "http://www.restaurantstashcafe.ca/",
+    "_id": "+15148456611",
+    "text": [{}],
+    "imgSrc": "/images/031.jpeg"
+  },
+  {
+    "name": "Café Rico",
+    "webSite": "https://www.caferico.ca/",
+    "_id": "+15145291321",
+    "text": [{}],
+    "imgSrc": "/images/032.jpeg"
+  },
+  {
+    "name": "Noble Café",
+    "webSite": "https://www.facebook.com/Noblecafemtl/",
+    "_id": "+15146567630",
+    "text": [{}],
+    "imgSrc": "/images/033.jpeg"
+  },
+  {
+    "name": "My Little Cup",
+    "webSite": "http://www.mylittlecup.cafe/",
+    "_id": "1224",
+    "text": [{}],
+    "imgSrc": "/images/034.jpeg"
+  },
+  {
+    "name": "afé Melbourne",
+    "webSite": "https://www.facebook.com/melbcafe/",
+    "_id": "2345",
+    "text": [{}],
+    "imgSrc": "/images/035.jpeg"
+  },
+  {
+    "name": "Café Tuyo",
+    "webSite": "https://www.facebook.com/CafeTuyo/",
+    "_id": "+15145448896",
+    "text": [{}],
+    "imgSrc": "/images/036.jpeg"
+  },
+  {
+    "name": "Café Sfouf",
+    "webSite": "http://cafesfouf.com/",
+    "_id": "+15145078777",
+    "text": [{}],
+    "imgSrc": "/images/037.jpeg"
+  },
+  {
+    "name": "Café de' Mercanti",
+    "webSite": "http://www.cafedemercanti.com/",
+    "_id": "+15149691807",
+    "text": [{}],
+    "imgSrc": "/images/038.jpeg"
+  },
+  {
+    "name": "Cafe Gentile",
+    "webSite": "http://cafegentile.ca/",
+    "_id": "+15143839299",
+    "text": [{}],
+    "imgSrc": "/images/039.jpeg"
+  },
+  {
+    "name": "Maestro Café",
+    "webSite": "",
+    "_id": "+15142721136",
+    "text": [{}],
+    "imgSrc": "/images/040.jpeg"
+  },
+  {
+    "name": "Croissant Croissant",
+    "webSite": "https://www.facebook.com/croissantcroissantmtl/",
+    "_id": "+15145430103",
+    "text": [{}],
+    "imgSrc": "/images/041.jpeg"
+  }
+]

@@ -1,13 +1,13 @@
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
-import coffee from '../../images/coffee.png';
 
-const Conversation = ({ cafes }) => {
+const Conversation = ({ conversation }) => {
+  const { name, imgSrc } = conversation;
   return (
     <Wrapper>
-      <CafeImg src={coffee} />
-      <CafeName>Starbucks</CafeName>
+      <CafeImg src={imgSrc} />
+      <CafeName>{name}</CafeName>
     </Wrapper>
   );
 };
@@ -32,5 +32,6 @@ const CafeImg = styled.img`
   margin-right: 20px;
 `;
 const CafeName = styled.span`
-  font-weight: 500;
+  font-weight: bolder;
+  font-size: 1.2rem;
 `;

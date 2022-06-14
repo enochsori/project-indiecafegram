@@ -15,6 +15,8 @@ const CafeProvider = ({ children }) => {
   const [geoCodes, setGeoCodes] = useState([]);
   const [center, setCenter] = useState({ lat: 45.501689, lng: -73.567256 });
 
+  const [chatConversation, setChatConverstation] = useState(null);
+
   // console.log(cafes);
 
   // Get all the cafe list from mongoDB
@@ -26,7 +28,7 @@ const CafeProvider = ({ children }) => {
       if (data) {
         // Extract addresses from all cafes' info
         const locations = data.map((cafe) => cafe.address);
-        console.log(locations);
+        // console.log(locations);
 
         // Find geocode to mark cafe locations in map
         let geoArray = [];
@@ -55,6 +57,8 @@ const CafeProvider = ({ children }) => {
         geoCodes,
         center,
         setCenter,
+        chatConversation,
+        setChatConverstation,
       }}
     >
       {children}

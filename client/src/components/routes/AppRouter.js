@@ -15,16 +15,15 @@ const AppRouter = () => {
   return (
     <Wrapper>
       <Routes>
-        {isLoggedIn ? (
-          <>
-            <Route path='/' element={<Home />}></Route>
-            <Route path='/chat' element={<Chat />}></Route>
-            <Route path='/profile' element={<Profile />}></Route>
-            <Route path='/edit-profile' element={<EditProfile />}></Route>
-          </>
-        ) : (
-          <Route path='/' element={<Auth />}></Route>
-        )}
+        <Route path='/' element={isLoggedIn ? <Home /> : <Auth />}></Route>
+
+        <Route path='/chat' element={isLoggedIn ? <Chat /> : <Auth />}></Route>
+        <Route
+          path='/profile'
+          element={isLoggedIn ? <Profile /> : <Auth />}
+        ></Route>
+
+        <Route path='/edit-profile' element={<EditProfile />}></Route>
       </Routes>
     </Wrapper>
   );

@@ -1,87 +1,117 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
+
+import { ChatContext } from '../ChatContext';
 import Conversation from '../chat/Converstaion';
 import Message from '../chat/Message';
+import { getCurrentUser } from '../../../../server/handler';
 
 const Chat = () => {
-  const inputRef = useRef(null);
+  const scrollRef = useRef();
+  const [isNewChat, setIsNewChat] = useState(false);
+
+  const {
+    conversations,
+    setConversations,
+    setCurrentChat,
+    currentChat,
+    newMessage,
+    setNewMessage,
+  } = useContext(ChatContext);
+
   useEffect(() => {
-    inputRef.current.focus();
-  }, []);
+    const getConversations = async () => {
+      const res = await fetch('/api/conversations');
+      const { data } = await res.json();
+      setConversations(data);
+    };
+    getConversations();
+  }, [isNewChat]);
+
+  // Submit new Chat to BE and database
+  const submitHandler = async (event) => {
+    event.preventDefault();
+    const now = new Date();
+
+    try {
+      const res = await fetch('/add-chat-message', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          _id: currentChat._id,
+          name: getCurrentUser[0].name,
+          text: newMessage,
+          createdAt: now,
+        }),
+      });
+      const result = await res.json();
+      console.log(result);
+      setIsNewChat(true);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [conversations]);
+
   return (
     <Wrapper>
       {/* Chat groups */}
       <ChatMenu>
         <ChatMenuWrapper>
-          <ChatMenuInput placeholder='"Search for cafes' />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
-          <Conversation />
+          <ChatMenuInput placeholder='Search for chat groups' />
+          {conversations &&
+            conversations.map((conv) => (
+              <div
+                key={Math.floor(Math.random() * 4000000)}
+                onClick={() => setCurrentChat(conv)}
+              >
+                <Conversation conversation={conv} />
+              </div>
+            ))}
         </ChatMenuWrapper>
       </ChatMenu>
 
       {/* Main chat box */}
       <ChatBox>
         <ChatBoxWrapper>
-          <ChatBoxTop>
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={false} />
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={true} />
-            <Message user={false} />
-            <Message user={true} />
-          </ChatBoxTop>
+          {currentChat ? (
+            <>
+              <ChatBoxTop>
+                {currentChat.text.map((chat) => (
+                  <div
+                    key={Math.floor(Math.random() * 4000000)}
+                    ref={scrollRef}
+                  >
+                    <Message
+                      key={Math.floor(Math.random() * 4000000)}
+                      chat={chat}
+                    />
+                  </div>
+                ))}
+              </ChatBoxTop>
 
-          <ChatBoxBottom>
-            <ChatMessageInput
-              ref={inputRef}
-              placeholder='Write something..'
-            ></ChatMessageInput>
-            <ChatSumbitButton>Submit</ChatSumbitButton>
-          </ChatBoxBottom>
+              <ChatBoxBottom onSubmit={submitHandler}>
+                <ChatMessageInput
+                  onChange={(event) => {
+                    setNewMessage(event.target.value);
+                  }}
+                  placeholder='Write something..'
+                ></ChatMessageInput>
+                <ChatSumbitButton>Submit</ChatSumbitButton>
+              </ChatBoxBottom>
+            </>
+          ) : (
+            <NoConversationText>
+              Choose a cafe chat group to start a chat
+            </NoConversationText>
+          )}
         </ChatBoxWrapper>
       </ChatBox>
-
-      {/* Current Online users */}
-      <ChatOnline>
-        <ChatOnlineWrapper></ChatOnlineWrapper>
-      </ChatOnline>
     </Wrapper>
   );
 };
@@ -131,7 +161,7 @@ const ChatBoxTop = styled.div`
   height: 100%;
   overflow-y: scroll;
 `;
-const ChatBoxBottom = styled.div`
+const ChatBoxBottom = styled.form`
   margin-top: 5px;
   display: flex;
   align-items: center;
@@ -160,11 +190,11 @@ const ChatSumbitButton = styled.button`
   }
 `;
 
-// ------------------------------
-
-// ------------------------------
-// Current Online users
-const ChatOnline = styled.div`
-  float: 2;
+const NoConversationText = styled.span`
+  position: absolute;
+  top: 10%;
+  font-size: 50px;
+  color: rgb(224, 220, 220);
+  cursor: default;
+  text-align: center;
 `;
-const ChatOnlineWrapper = styled.div``;

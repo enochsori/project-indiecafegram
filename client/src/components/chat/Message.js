@@ -1,13 +1,18 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { UserContext } from '../UserContext';
 
-const Message = ({ user }) => {
+const Message = ({ chat }) => {
+  const { currentUser } = useContext(UserContext);
+  const user = currentUser[0].name === Object.keys(chat)[0] ? true : false;
+  const name = Object.keys(chat)[0].slice(0, 2);
+
   return (
     <Wrapper user={user ? true : false}>
       <MessageTop>
-        <MessageImg user={user ? true : false}>EN</MessageImg>
+        <MessageImg user={user ? true : false}>{name}</MessageImg>
         <MessageText user={user ? true : false}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          {Object.values(chat)[0]}
         </MessageText>
       </MessageTop>
       <MessageTime>i hour ago</MessageTime>
@@ -44,6 +49,7 @@ const MessageImg = styled.div`
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 10px;
+  text-transform: uppercase;
 `;
 const MessageText = styled.p`
   padding: 15px;

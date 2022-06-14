@@ -34,8 +34,6 @@ const UserProvider = ({ children }) => {
               const { data } = await res.json();
               // console.log(data);
               setCurrentUser(data);
-              setIsLoggedIn(true);
-              setStatus('idle');
             } catch (err) {
               console.log('database error');
             }
@@ -49,6 +47,13 @@ const UserProvider = ({ children }) => {
       }
     });
   }, [userId]);
+
+  useEffect(() => {
+    if (currentUser) {
+      setIsLoggedIn(true);
+      setStatus('idle');
+    }
+  }, [currentUser]);
 
   // [POST] Register new user info into database
   useEffect(() => {

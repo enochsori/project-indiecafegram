@@ -8,6 +8,9 @@ const {
   getCafes,
   getCommentsById,
   addComment,
+  getConversation,
+  getConversations,
+  addChatMessage,
 } = require("./handler");
 const { batchImport } = require("./batchImport");
 
@@ -45,6 +48,23 @@ express()
   // Get comments based on id
   .get("/api/comment/:_id", getCommentsById)
 
+  // Get all converstaions
+  .get("/api/conversations", getConversations)
+  // Get converstaion based on cafe id
+  .get("/api/conversations/:_id", getConversation)
+
+  // Register a new user into user database
+  .post("/api/new-user", registerNewUser)
+
+  // Register initial data(cafes, converstaions)
+  .post("/api/initial-data", batchImport)
+
+  // Update user comment
+  .patch("/api/add-comment", addComment)
+
+  // Update new chat message
+  .patch("/api/add-chat-message", addChatMessage)
+
   // This is our catch all endpoint.
   .get("*", (req, res) => {
     res.status(404).json({
@@ -52,14 +72,5 @@ express()
       message: "This is obviously not what you are looking for.",
     });
   })
-
-  // Register a new user into user database
-  .post("/api/new-user", registerNewUser)
-
-  // Endpoint for batch initial cafe data
-  .post("/api/add-all-cafes", batchImport)
-
-  // Update user comment
-  .patch("/api/add-comment", addComment)
 
   .listen(PORT, () => console.info(`Listening on port ${PORT}`));

@@ -1,5 +1,6 @@
 "use strict";
 const { MongoClient } = require("mongodb");
+const { restart } = require("nodemon");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
@@ -62,7 +63,6 @@ const getCafes = async (req, res) => {
 
     const db = await client.db("indiecafegram");
     const data = await db.collection("cafes").find().toArray();
-    console.log(data);
 
     data
       ? res
@@ -91,8 +91,6 @@ const getCommentsById = async (req, res) => {
 };
 
 // Update user comment
-
-// 2. update user collection with user _id
 const addComment = async (req, res) => {
   const { cafeId, name, userId, newComment } = req.body;
 
@@ -123,10 +121,69 @@ const addComment = async (req, res) => {
   client.close();
   console.log("Disconnected");
 };
+
+// ------------------------------------------------------
+// ------------------------------------------------------
+// Get all converstaions
+const getConversations = async (req, res) => {
+  try {
+    await client.connect();
+    console.log("Connected");
+
+    const db = await client.db("indiecafegram");
+    const data = await db.collection("conversations").find().toArray();
+    res.status(200).json({ status: 200, data, message: "Request complete" });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err });
+  }
+  client.close();
+  console.log("Disconnected");
+};
+
+// Get conversation based on cafe _id
+const getConversation = async (req, res) => {
+  const { _id } = req.params;
+  console.log(_id);
+  try {
+    await client.connect();
+    console.log("Connected");
+
+    const db = await client.db("indiecafegram");
+    const data = await db.collection("conversations").find({ _id }).toArray();
+    res.status(200).json({ status: 200, data, message: "Request complete" });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err });
+  }
+  client.close();
+  console.log("Disconnected");
+};
+
+// Add chat message to the converstions
+const addChatMessage = async (req, res) => {
+  const { _id, name, text, createdAt } = req.body;
+  try {
+    await client.connect();
+    console.log("Connected");
+    const db = await client.db("indiecafegram");
+    const result = await db
+      .collection("conversations")
+      .updateOne({ _id }, { $addToSet: { text: { [name]: text, createdAt } } });
+    console.log(result);
+    res.status(200).json({ status: 200, message: "Request completed" });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err });
+  }
+  client.close();
+  console.log("Disconnected");
+};
+
 module.exports = {
   getCurrentUser,
   registerNewUser,
   getCafes,
   getCommentsById,
   addComment,
+  getConversation,
+  getConversations,
+  addChatMessage,
 };

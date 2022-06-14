@@ -3,8 +3,8 @@ import { UserContext } from '../UserContext';
 
 const Profile = () => {
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
-  
+  // console.log(currentUser);
+
   return <span>Profile</span>;
 };
 

@@ -26,17 +26,12 @@ const CafeDetail = () => {
 
   const { currentUser } = useContext(UserContext);
 
-  if (currentUser) {
-    console.log(currentUser);
-  }
-
   const closeHandler = () => {
     setIsSelected(false);
     setSelectedCafe(false);
   };
 
   const updateCommentFetch = async () => {
-    console.log(userInput);
     try {
       const res = await fetch('/api/add-comment', {
         method: 'PATCH',
@@ -51,7 +46,7 @@ const CafeDetail = () => {
         }),
       });
       const result = await res.json();
-      console.log(result);
+
       setNewComment(result);
       inputRef.current.value = '';
     } catch (err) {
@@ -61,7 +56,6 @@ const CafeDetail = () => {
 
   const newCommentHandler = (event) => {
     event.preventDefault();
-    console.log('new comment?');
     // Call a function to fetch updating new comment
     updateCommentFetch();
     event.target.value = '';

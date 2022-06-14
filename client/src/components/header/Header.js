@@ -1,4 +1,4 @@
-import { Route, NavLink } from 'react-router-dom';
+import { useNavigate, Route, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { UserContext } from '../UserContext';
@@ -6,11 +6,13 @@ import { CafeContext } from '../CafeContext';
 import { getAuth, signOut } from 'firebase/auth';
 import { IoPersonCircleOutline } from 'react-icons/io5';
 import { AiOutlineLogout } from 'react-icons/ai';
+import { IoChatbubble } from 'react-icons/io5';
 const Header = () => {
   const { currentUser, setStatus, setIsLoggedIn, setUserId } =
     useContext(UserContext);
   const { setIsSelected } = useContext(CafeContext);
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const logoutHandler = async () => {
     // Call signout from firebase
@@ -21,25 +23,45 @@ const Header = () => {
     setIsLoggedIn(false);
     setStatus('loading');
     setIsSelected(false);
+    navigate('/');
   };
 
   return (
     <Wrapper>
       <ContentWrapper>
-        <StyledNavLink to='/'>
-          <Title>Indicafegram</Title>
-        </StyledNavLink>
-        {currentUser && <Greeting> Welcome, {currentUser[0].name}</Greeting>}
+        <LogoWrapper>
+          <StyledNavLink to='/'>
+            <Title>Indicafegram</Title>
+          </StyledNavLink>
+        </LogoWrapper>
 
-        <StyledNavLink to='/profile'>
-          <StyledIoPersonCircleOutline />
-          <ProfileLable>Profile</ProfileLable>
-        </StyledNavLink>
+        <MenuWrapper>
+          <StyledNavLink to='/profile'>
+            <StyledIoPersonCircleOutline />
+            <ProfileLable>Profile</ProfileLable>
+          </StyledNavLink>
 
-        <LogoutButton onClick={logoutHandler}>
-          <StyledAiOutlineLogout />
-          <LogoutLable>Log out</LogoutLable>
-        </LogoutButton>
+          <StyledNavLink to='/chat'>
+            <StyledIoChatbubble />
+            <ChatLable>Chat</ChatLable>
+          </StyledNavLink>
+
+          <LogoutButton onClick={logoutHandler}>
+            <StyledAiOutlineLogout />
+            <LogoutLable>Log out</LogoutLable>
+          </LogoutButton>
+
+          <GreetingWrapper>
+            {currentUser ? (
+              <>
+                <Greeting> Welcome,</Greeting>{' '}
+                <Greeting> {currentUser[0].name}</Greeting>
+              </>
+            ) : (
+              <Greeting></Greeting>
+            )}
+          </GreetingWrapper>
+        </MenuWrapper>
       </ContentWrapper>
     </Wrapper>
   );
@@ -55,12 +77,9 @@ const Wrapper = styled.div`
   position: fixed;
   left: 0;
   background-color: #fff;
-  z-index: 10;
-
   z-index: 100;
 `;
 const ContentWrapper = styled.div`
-  border: 1px solid blue;
   z-index: 90;
   background-color: #fff;
   position: fixed;
@@ -68,7 +87,20 @@ const ContentWrapper = styled.div`
   width: 1250px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+`;
+const LogoWrapper = styled.div`
+  flex: 6;
+  padding-bottom: 3px;
+`;
+const MenuWrapper = styled.div`
+  
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pa
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -84,8 +116,12 @@ const StyledIoPersonCircleOutline = styled(IoPersonCircleOutline)`
 const Title = styled.span`
   font-size: 2.2rem;
   font-weight: bold;
-  /* text-transform: uppercase; */
   color: black;
+`;
+const GreetingWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
 `;
 const Greeting = styled.span`
   font-size: 1rem;
@@ -101,13 +137,14 @@ const ProfileLable = styled.span`
   padding: 38px 0 0 0;
   font-size: 0.8rem;
   font-weight: bold;
-  bottom: -15px;
-  left: 0;
+  bottom: -18px;
+  left: -10px;
+  color: black;
   opacity: 0;
   transition: all 300ms ease-in;
   &:hover {
     opacity: 1;
-    transform: translateY(-12px);
+    transform: translateY(-11px);
   }
 `;
 const LogoutButton = styled.button`
@@ -116,7 +153,8 @@ const LogoutButton = styled.button`
   height: 40px;
   width: 30px;
   position: relative;
-  cursor: pointer; ;
+  cursor: pointer;
+  margin: 0 40px;
 `;
 const LogoutLable = styled.span`
   text-transform: uppercase;
@@ -127,16 +165,40 @@ const LogoutLable = styled.span`
   padding: 38px 0 0 0;
   font-size: 0.8rem;
   font-weight: bold;
-  bottom: -15px;
-  left: 0;
+  bottom: -14px;
+  left: -22px;
   opacity: 0;
   transition: all 300ms ease-in;
   &:hover {
     opacity: 1;
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
 `;
 
+const StyledIoChatbubble = styled(IoChatbubble)`
+  font-size: 1.8rem;
+  color: black;
+  margin-left: 40px;
+`;
+const ChatLable = styled.span`
+  text-transform: uppercase;
+  position: absolute;
+  display: inline-block;
+  width: 90px;
+  height: 50px;
+  color: black;
+  padding: 38px 0 0 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  bottom: -20px;
+  left: 32px;
+  opacity: 0;
+  transition: all 300ms ease-in;
+  &:hover {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+`;
 const StyledAiOutlineLogout = styled(AiOutlineLogout)`
   font-size: 1.8rem;
 `;

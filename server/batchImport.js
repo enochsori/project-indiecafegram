@@ -3,6 +3,7 @@ require("dotenv").config();
 const { MONGO_URI } = process.env;
 
 const cafes = require("./data/cafes.json");
+const conversations = require("./data/converstations.json");
 
 const options = {
   useNewUrlParser: true,
@@ -17,6 +18,8 @@ const batchImport = async (req, res) => {
     console.log("Connected!");
     const db = client.db("indiecafegram");
     await db.collection("cafes").insertMany(cafes);
+    await db.collection("conversations").insertMany(conversations);
+
     res.status(201).json({ status: 201, message: "done" });
   } catch (err) {
     res.status(400).json({ status: 400, message: err.message });
