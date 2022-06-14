@@ -13,9 +13,6 @@ const UserProvider = ({ children }) => {
   const [userId, setUserId] = useState(null);
   const auth = getAuth();
 
-  // console.log('current user is:', currentUser);
-  // console.log('currentUserid?', userId);
-
   useEffect(() => {
     const savedId = window.localStorage.getItem('userId');
     if (savedId) {
@@ -31,9 +28,11 @@ const UserProvider = ({ children }) => {
           const fetchUserInfo = async () => {
             try {
               const res = await fetch(`/api/users/${user.uid}`);
-              const { data } = await res.json();
-              // console.log(data);
-              setCurrentUser(data);
+              const userData = await res.json();
+              if (userData) {
+                const { data } = userData;
+                setCurrentUser(data[0]);
+              }
             } catch (err) {
               console.log('database error');
             }
@@ -47,6 +46,8 @@ const UserProvider = ({ children }) => {
       }
     });
   }, [userId]);
+
+  console.log(isLoggedIn, currentUser);
 
   useEffect(() => {
     if (currentUser) {

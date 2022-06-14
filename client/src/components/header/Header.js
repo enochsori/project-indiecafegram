@@ -55,7 +55,7 @@ const Header = () => {
             {currentUser ? (
               <>
                 <Greeting> Welcome,</Greeting>{' '}
-                <Greeting> {currentUser[0].name}</Greeting>
+                <Greeting> {currentUser.name}</Greeting>
               </>
             ) : (
               <Greeting></Greeting>
@@ -154,7 +154,7 @@ const LogoutButton = styled.button`
   width: 30px;
   position: relative;
   cursor: pointer;
-  margin: 0 40px;
+  margin: 0 30px;
 `;
 const LogoutLable = styled.span`
   text-transform: uppercase;
@@ -191,7 +191,7 @@ const ChatLable = styled.span`
   font-size: 0.8rem;
   font-weight: bold;
   bottom: -20px;
-  left: 32px;
+  left: 38px;
   opacity: 0;
   transition: all 300ms ease-in;
   &:hover {

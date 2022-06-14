@@ -2,17 +2,18 @@ import { useContext } from 'react';
 import styled from 'styled-components';
 import { UserContext } from '../UserContext';
 
-const Message = ({ chat }) => {
+const Message = ({ message }) => {
   const { currentUser } = useContext(UserContext);
-  const user = currentUser[0].name === Object.keys(chat)[0] ? true : false;
-  const name = Object.keys(chat)[0].slice(0, 2);
+  const user = currentUser.name === Object.keys(message)[0] ? true : false;
 
   return (
     <Wrapper user={user ? true : false}>
       <MessageTop>
-        <MessageImg user={user ? true : false}>{name}</MessageImg>
+        <MessageImg user={user ? true : false}>
+          {Object.keys(message)[0]}
+        </MessageImg>
         <MessageText user={user ? true : false}>
-          {Object.values(chat)[0]}
+          {Object.values(message)[0]}
         </MessageText>
       </MessageTop>
       <MessageTime>i hour ago</MessageTime>
@@ -39,12 +40,12 @@ const MessageTop = styled.div`
 // const a = Math.floor(Math.random());
 
 const MessageImg = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: ${(p) => (p.user ? 'blue' : 'red')};
   text-align: center;
-  padding-top: 7px;
+  padding-top: 9px;
   color: #fff;
   font-weight: bold;
   font-size: 1.2rem;

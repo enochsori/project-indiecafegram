@@ -39,8 +39,8 @@ const CafeDetail = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId: currentUser[0]._id,
-          name: currentUser[0].name,
+          userId: currentUser._id,
+          name: currentUser.name,
           newComment: userInput,
           cafeId: _id,
         }),

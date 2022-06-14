@@ -1,24 +1,50 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-
 import { ChatContext } from '../ChatContext';
 import Conversation from '../chat/Converstaion';
 import Message from '../chat/Message';
-import { getCurrentUser } from '../../../../server/handler';
+import { async } from '@firebase/util';
 
 const Chat = () => {
   const scrollRef = useRef();
-  const [isNewChat, setIsNewChat] = useState(false);
+  const inputRef = useRef();
+  const [newChat, setNewChat] = useState(null);
+  const [user, setUser] = useState(null);
 
   const {
     conversations,
     setConversations,
     setCurrentChat,
+    currentUser,
     currentChat,
     newMessage,
     setNewMessage,
+    messages,
+    setMessages,
   } = useContext(ChatContext);
 
+  console.log(user, currentUser);
+
+  // Get current user
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const _id = window.localStorage.getItem('userId');
+        const res = await fetch(`/api/users/${_id}`);
+        const userData = await res.json();
+        console.log(userData);
+        if (userData) {
+          const { data } = userData;
+          setUser(data[0]);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getUser();
+  }, []);
+
+  // Get all chat group info
   useEffect(() => {
     const getConversations = async () => {
       const res = await fetch('/api/conversations');
@@ -26,29 +52,48 @@ const Chat = () => {
       setConversations(data);
     };
     getConversations();
-  }, [isNewChat]);
+  }, []);
+
+  // get messages of selected chat group
+  useEffect(() => {
+    const _id = currentChat._id;
+    const getMessagesById = async () => {
+      const res = await fetch(`/api/conversations/${_id}`);
+      const chatData = await res.json();
+      if (chatData) {
+        const { data } = chatData;
+        console.log(data);
+        setMessages(data[0].text);
+      }
+    };
+    getMessagesById();
+  }, [currentChat]);
 
   // Submit new Chat to BE and database
   const submitHandler = async (event) => {
     event.preventDefault();
+
+    console.log(currentUser);
+
     const now = new Date();
 
     try {
-      const res = await fetch('/add-chat-message', {
+      const res = await fetch('/api/add-chat-message', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           _id: currentChat._id,
-          name: getCurrentUser[0].name,
+          name: user.name,
           text: newMessage,
           createdAt: now,
         }),
       });
       const result = await res.json();
       console.log(result);
-      setIsNewChat(true);
+      inputRef.current.value = '';
+      setNewChat(result);
     } catch (err) {
       console.log(err);
     }
@@ -82,14 +127,14 @@ const Chat = () => {
           {currentChat ? (
             <>
               <ChatBoxTop>
-                {currentChat.text.map((chat) => (
+                {messages.map((message) => (
                   <div
                     key={Math.floor(Math.random() * 4000000)}
                     ref={scrollRef}
                   >
                     <Message
                       key={Math.floor(Math.random() * 4000000)}
-                      chat={chat}
+                      message={message}
                     />
                   </div>
                 ))}
@@ -97,6 +142,7 @@ const Chat = () => {
 
               <ChatBoxBottom onSubmit={submitHandler}>
                 <ChatMessageInput
+                  ref={inputRef}
                   onChange={(event) => {
                     setNewMessage(event.target.value);
                   }}

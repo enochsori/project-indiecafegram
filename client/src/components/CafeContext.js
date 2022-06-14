@@ -31,13 +31,13 @@ const CafeProvider = ({ children }) => {
         // console.log(locations);
 
         // Find geocode to mark cafe locations in map
-        let geoArray = [];
-        locations.map(async (loc) => {
-          const res = await Geocode.fromAddress(loc);
-          const data = await res.results[0].geometry.location;
-          geoArray.push(data);
-        });
-        setGeoCodes(geoArray);
+        // let geoArray = [];
+        // locations.map(async (loc) => {
+        //   const res = await Geocode.fromAddress(loc);
+        //   const data = await res.results[0].geometry.location;
+        //   geoArray.push(data);
+        // });
+        // setGeoCodes(geoArray);
       }
     };
     fetchData();
