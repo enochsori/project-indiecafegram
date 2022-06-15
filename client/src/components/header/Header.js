@@ -8,6 +8,8 @@ import { IoPersonCircleOutline } from 'react-icons/io5';
 import { AiOutlineLogout } from 'react-icons/ai';
 import { IoChatbubble } from 'react-icons/io5';
 import { ChatContext } from '../ChatContext';
+import { MdOutlineLibraryAdd } from 'react-icons/md';
+
 const Header = () => {
   const { currentUser, setStatus, setIsLoggedIn, setUserId, setCurrentUser } =
     useContext(UserContext);
@@ -36,11 +38,16 @@ const Header = () => {
       <ContentWrapper>
         <LogoWrapper>
           <StyledNavLink to='/'>
-            <Title>Indicafegram</Title>
+            <Title>Indicafégram</Title>
           </StyledNavLink>
         </LogoWrapper>
 
         <MenuWrapper>
+          <StyledNavLink to='/add-cafe'>
+            <StyledMdOutlineLibraryAdd />
+            <AddNewCafeLable>Add</AddNewCafeLable>
+          </StyledNavLink>
+
           <StyledNavLink to='/profile'>
             <StyledIoPersonCircleOutline />
             <ProfileLable>Profile</ProfileLable>
@@ -101,30 +108,61 @@ const LogoWrapper = styled.div`
   flex: 6;
   padding-bottom: 3px;
 `;
-const MenuWrapper = styled.div`
-  
-  flex: 6;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  pa
+const Title = styled.span`
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: black;
 `;
 
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   position: relative;
 `;
+const MenuWrapper = styled.div`
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
-const StyledIoPersonCircleOutline = styled(IoPersonCircleOutline)`
+const AddNewCafeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  position: relative;
+  cursor: pointer;
+`;
+const StyledMdOutlineLibraryAdd = styled(MdOutlineLibraryAdd)`
   font-size: 2.1rem;
   color: black;
 `;
 
-const Title = styled.span`
-  font-size: 2.2rem;
+const AddNewCafeLable = styled.span`
+  text-transform: uppercase;
+  position: absolute;
+  display: inline-block;
+  width: 90px;
+  height: 50px;
+  padding: 38px 0 0 0;
+  font-size: 0.8rem;
   font-weight: bold;
+  bottom: -19px;
+  left: 3px;
   color: black;
+  opacity: 0;
+  transition: all 300ms ease-in;
+  &:hover {
+    opacity: 1;
+    transform: translateY(-9px);
+  }
 `;
+
+const StyledIoPersonCircleOutline = styled(IoPersonCircleOutline)`
+  font-size: 2.1rem;
+  color: black;
+  margin-left: 35px;
+`;
+
 const GreetingWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -145,7 +183,7 @@ const ProfileLable = styled.span`
   font-size: 0.8rem;
   font-weight: bold;
   bottom: -18px;
-  left: -10px;
+  left: 24px;
   color: black;
   opacity: 0;
   transition: all 300ms ease-in;

@@ -38,7 +38,7 @@ const CafeProvider = ({ children }) => {
           const data = await res.results[0].geometry.location;
           geoArray.push(data);
         });
-        console.log(geoArray);
+
         setGeoCodes(geoArray);
         setCenter(geoArray[0]);
       }

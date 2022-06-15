@@ -45,7 +45,7 @@ const Chat = () => {
         const userData = await res.json();
         if (userData) {
           const { data } = userData;
-          console.log(data[0]);
+          // console.log(data[0]);
           setUser(data[0]);
         }
       } catch (err) {

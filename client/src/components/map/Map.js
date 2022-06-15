@@ -16,11 +16,6 @@ const Map = () => {
     height: '700px',
   };
 
-  // Display info window when location maker hovered
-  const onMouseOverHandler = (index) => {
-    setToggleOpen(!toggleOpen);
-  };
-
   // Dispay cafe detail when location maker clicked
   const onClickHandler = (index) => {
     setIsSelected(true);
@@ -54,15 +49,12 @@ const Map = () => {
 
         {geoCodes &&
           geoCodes.map((geoCode, index) => (
-            <>
-              <Marker
-                key={Math.floor(Math.random() * 400000000)}
-                position={geoCode}
-                index={index}
-                onMouseOver={() => onMouseOverHandler(index)}
-                onClick={() => onClickHandler(index)}
-              ></Marker>
-            </>
+            <Marker
+              key={Math.floor(Math.random() * 400000000)}
+              position={geoCode}
+              index={index}
+              onClick={() => onClickHandler(index)}
+            />
           ))}
       </GoogleMap>
     </Wrapper>

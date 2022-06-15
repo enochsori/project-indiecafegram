@@ -8,6 +8,7 @@ import Profile from '../routes/Profile';
 import Auth from '../routes/Auth';
 import EditProfile from '../routes/EditProfile';
 import Chat from './Chat';
+import AddCafe from './AddCafe';
 
 const AppRouter = () => {
   const { isLoggedIn } = useContext(UserContext);
@@ -24,6 +25,11 @@ const AppRouter = () => {
         ></Route>
 
         <Route path='/edit-profile' element={<EditProfile />}></Route>
+
+        <Route
+          path='/add-cafe'
+          element={isLoggedIn ? <AddCafe /> : <Auth />}
+        ></Route>
       </Routes>
     </Wrapper>
   );

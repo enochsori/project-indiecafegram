@@ -207,6 +207,26 @@ const updateProfile = async (req, res) => {
   }
 };
 
+// Add new cafe
+const addCafé = async (req, res) => {
+  const { name, phone, webSite, address } = req.body;
+  const randomNumber = Math.floor(Math.random() * 41 + 1);
+  const imgSrc = `/images/0${randomNumber}.jpeg`;
+  try {
+    await client.connect();
+    const db = await client.db("indiecafegram");
+    const result = await db
+      .collection("cafes")
+      .insertOne({ name, _id: phone, phone, email, imgSrc, webSite });
+
+    console.log(result);
+
+    res.status(200).json({ status: 200, message: "Request completed" });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err });
+  }
+};
+
 module.exports = {
   getCurrentUser,
   registerNewUser,
@@ -217,4 +237,5 @@ module.exports = {
   getConversations,
   addChatMessage,
   updateProfile,
+  addCafé,
 };

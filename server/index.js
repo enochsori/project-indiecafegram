@@ -12,6 +12,7 @@ const {
   getConversations,
   addChatMessage,
   updateProfile,
+  addCafé,
 } = require("./handler");
 const { batchImport } = require("./batchImport");
 
@@ -68,6 +69,9 @@ express()
 
   // Update user profile
   .patch("/api/edit-profile", updateProfile)
+
+  // Add new café
+  .patch("/api/add-cafe", addCafé)
 
   // This is our catch all endpoint.
   .get("*", (req, res) => {
