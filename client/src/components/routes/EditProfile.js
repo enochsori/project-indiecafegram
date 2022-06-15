@@ -138,6 +138,8 @@ const NameLable = styled.div`
   width: 30%;
 `;
 const Name = styled.input`
+  font-size: 1.2rem;
+  font-weight: bold;
   border: none;
   width: 70%;
 `;
