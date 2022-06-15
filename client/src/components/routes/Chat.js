@@ -62,11 +62,8 @@ const Chat = () => {
       const getMessagesById = async () => {
         try {
           const res = await fetch(`/api/conversations/${_id}`);
-          const chatData = await res.json();
-          if (chatData) {
-            const { data } = chatData;
-            setMessages(data[0].text);
-          }
+          const { data } = await res.json();
+          data && setMessages(data[0].text);
         } catch (err) {
           console.log(err);
         }
