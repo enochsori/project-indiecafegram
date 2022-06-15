@@ -35,7 +35,7 @@ const Chat = () => {
       }
     };
     getConversations();
-  }, [newChat]);
+  }, [newChat, messages]);
 
   useEffect(() => {
     const getUser = async () => {
