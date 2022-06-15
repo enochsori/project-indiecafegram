@@ -65,7 +65,6 @@ const Chat = () => {
           const chatData = await res.json();
           if (chatData) {
             const { data } = chatData;
-
             setMessages(data[0].text);
           }
         } catch (err) {
