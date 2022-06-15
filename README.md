@@ -1,8 +1,16 @@
 # project-indiecafegram
 
-Location based independent cafe social media
+###Location based independent cafe social media
 
 ## Client
+
+### react-google-map/api
+
+### firebase - only authenticatin not database
+
+## Server
+
+### mongoDB
 
 ## Home - google map, sidebar with cafe list
 
@@ -25,3 +33,9 @@ Location based independent cafe social media
 ## Profile and Edit profile
 
 ## Log out
+
+## on the next version..
+
+### socket.ico
+
+### improve google maps utilization
