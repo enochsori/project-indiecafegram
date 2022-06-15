@@ -12,10 +12,11 @@
 
 ### - mongoDB
 
-
 ## Log in or Sign up
- ### - firebase authenticatoin 
- ### - mongoDB to save user info
+
+### - firebase authenticatoin
+
+### - mongoDB to save user info
 
 ## Home - google map, sidebar with cafe list
 
@@ -45,6 +46,10 @@
 
 ### - improve google maps utilization
 
+### - upgrage user profile
+
+#### avatar and more info
+
 ### - implement more APIs
 
-#### -- weather, instagram, youtube, etc..
+#### weather, instagram, youtube, etc..
