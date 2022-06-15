@@ -7,6 +7,7 @@ const CommentsList = ({ _id }) => {
   const [comment, setComment] = useState(null);
   const { newComment } = useContext(CafeContext);
   const scrollRef = useRef(null);
+  
   // Get comments from db
   useEffect(() => {
     const getComments = async () => {

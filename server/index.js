@@ -11,6 +11,7 @@ const {
   getConversation,
   getConversations,
   addChatMessage,
+  updateProfile,
 } = require("./handler");
 const { batchImport } = require("./batchImport");
 
@@ -64,6 +65,9 @@ express()
 
   // Update new chat message
   .patch("/api/add-chat-message", addChatMessage)
+
+  // Update user profile
+  .patch("/api/edit-profile", updateProfile)
 
   // This is our catch all endpoint.
   .get("*", (req, res) => {

@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import styled from 'styled-components';
-import { CafeContext } from '../CafeContext';
 
 const Conversation = ({ conversation }) => {
   const { name, imgSrc } = conversation;

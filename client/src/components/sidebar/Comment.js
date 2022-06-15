@@ -1,10 +1,6 @@
-import { useContext } from 'react';
 import styled from 'styled-components';
-import { CafeContext } from '../CafeContext';
 
 const Comment = ({ comment }) => {
-  const { newComment, setNewComment } = useContext(CafeContext);
-
   const key = Object.keys(comment)[0];
   const value = Object.values(comment)[0];
   return (

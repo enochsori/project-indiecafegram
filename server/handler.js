@@ -1,6 +1,5 @@
 "use strict";
 const { MongoClient } = require("mongodb");
-const { restart } = require("nodemon");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
 
@@ -183,6 +182,31 @@ const addChatMessage = async (req, res) => {
   }
 };
 
+// Update user profile
+const updateProfile = async (req, res) => {
+  const { _id, name } = req.body;
+  console.log(_id, name);
+  try {
+    await client.connect();
+    console.log("Connected");
+
+    const query = { _id };
+    const newValue = { $set: { name } };
+    const db = await client.db("indiecafegram");
+    const result = await db.collection("users").updateOne(query, newValue);
+    console.log(result);
+    const data = await db.collection("users").find(query).toArray();
+    console.log(data);
+
+    client.close();
+    console.log("Disconnected");
+
+    res.status(200).json({ status: 200, data });
+  } catch (err) {
+    res.status(500).json({ status: 500, message: err });
+  }
+};
+
 module.exports = {
   getCurrentUser,
   registerNewUser,
@@ -192,4 +216,5 @@ module.exports = {
   getConversation,
   getConversations,
   addChatMessage,
+  updateProfile,
 };

@@ -14,7 +14,9 @@ const CafeProvider = ({ children }) => {
   const [isSelected, setIsSelected] = useState(false);
   const [selectedCafe, setSelectedCafe] = useState(null);
   const [newComment, setNewComment] = useState(null);
-  const [geoCodes, setGeoCodes] = useState([]);
+  const [geoCodes, setGeoCodes] = useState([
+    { lat: 45.501689, lng: -73.567256 },
+  ]);
   const [center, setCenter] = useState(null);
   const [chatConversation, setChatConverstation] = useState(null);
 
@@ -38,6 +40,7 @@ const CafeProvider = ({ children }) => {
           const data = await res.results[0].geometry.location;
           geoArray.push(data);
         });
+        console.log(geoArray);
         setGeoCodes(geoArray);
         setCenter(geoArray[0]);
       }
