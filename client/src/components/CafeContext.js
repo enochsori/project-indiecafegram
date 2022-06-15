@@ -14,9 +14,7 @@ const CafeProvider = ({ children }) => {
   const [isSelected, setIsSelected] = useState(false);
   const [selectedCafe, setSelectedCafe] = useState(null);
   const [newComment, setNewComment] = useState(null);
-  const [geoCodes, setGeoCodes] = useState([
-    { lat: 45.501689, lng: -73.567256 },
-  ]);
+  const [geoCodes, setGeoCodes] = useState([]);
   const [center, setCenter] = useState(null);
   const [chatConversation, setChatConverstation] = useState(null);
 

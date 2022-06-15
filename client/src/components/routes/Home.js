@@ -1,5 +1,5 @@
 import { useJsApiLoader } from '@react-google-maps/api';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 import styled from 'styled-components';
 import { CafeContext } from '../CafeContext';
@@ -9,6 +9,7 @@ import Sidebar from '../sidebar/Sidebar';
 
 const Home = () => {
   const { isSelected } = useContext(CafeContext);
+
   const { REACT_APP_GOOGLE_MAPS_API_KEY } = process.env;
 
   const { isLoaded } = useJsApiLoader({

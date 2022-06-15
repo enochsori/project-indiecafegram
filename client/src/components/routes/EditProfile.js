@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useContext, useEffect, useState, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { UserContext } from '../UserContext';
 import noAvatar from '../../images/noAvatar.png';
 import { useNavigate } from 'react-router-dom';
@@ -9,10 +9,6 @@ const EditProfile = () => {
   // console.log(currentUser);
   const inputRef = useRef(null);
   const navigate = useNavigate(null);
-
-  // useEffect(() => {
-  //   inputRef.current.focus();
-  // });
 
   const editSubmitHandler = () => {
     const name = inputRef.current.value;
@@ -30,8 +26,10 @@ const EditProfile = () => {
         });
         const { data } = await res.json();
         // update currentUser and move to home
-        setUserId(currentUser._id);
-        navigate('/profile');
+        if (data) {
+          setUserId(currentUser._id);
+          navigate('/profile');
+        }
       } catch (err) {
         console.log(err);
       }

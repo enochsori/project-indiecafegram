@@ -4,14 +4,8 @@ import { CafeContext } from '../CafeContext';
 
 const CafeList = ({ cafe, index }) => {
   const { name, address, imgSrc } = cafe;
-  const {
-    setIsSelected,
-    setSelectedCafe,
-    setCenter,
-
-    geoCodes,
-    setIsMouseOn,
-  } = useContext(CafeContext);
+  const { setIsSelected, setSelectedCafe, setCenter, geoCodes } =
+    useContext(CafeContext);
 
   const displayDetailHandler = (event) => {
     if (name !== null) {

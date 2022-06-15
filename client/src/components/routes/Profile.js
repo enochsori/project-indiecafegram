@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useContext, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../UserContext';
 import noAvatar from '../../images/noAvatar.png';
 import { useNavigate } from 'react-router-dom';
