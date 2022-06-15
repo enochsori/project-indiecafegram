@@ -1,16 +1,22 @@
 import styled from 'styled-components';
-import { useContext, useState, useRef } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import { UserContext } from '../UserContext';
-import noAvatar from '../../images/noAvatar.png';
 import { useNavigate } from 'react-router-dom';
 import cafe from '../../images/cafe.jpeg';
-import { async } from '@firebase/util';
+import { CafeContext } from '../CafeContext';
 
 const AddCafe = () => {
+  const { setNewCafe } = useContext(CafeContext);
   const [newName, setNewName] = useState(null);
   const [newAddress, setNewAddress] = useState(null);
   const [newPhone, setNewPhone] = useState(null);
   const [newWebSite, setNewWebSite] = useState(null);
+  const inputRef = useRef(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const inputCleanHandler = () => {
     setNewName('');
@@ -18,18 +24,41 @@ const AddCafe = () => {
     setNewPhone('');
     setNewWebSite('');
   };
+
   const addCafeHandler = (event) => {
     event.preventDefault();
+
+    console.log(newAddress, newName, newPhone, newWebSite);
+
     const addCafe = async () => {
       try {
-        const res = await fetch('');
+        const res = await fetch('/api/add-cafe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: newName,
+            phone: newPhone,
+            webSite: newWebSite,
+            address: newAddress,
+            _id: newPhone,
+          }),
+        });
+        const result = await res.json();
+        console.log(result);
 
-        // Clean inputs
-        inputCleanHandler();
+        if (result) {
+          // Clean inputs
+          inputCleanHandler();
+          setNewCafe(true);
+          navigate('/');
+        }
       } catch (err) {
-        console.loge(err);
+        console.log(err);
       }
     };
+    addCafe();
   };
   return (
     <AddCafeBackground>
@@ -39,6 +68,7 @@ const AddCafe = () => {
           <Title>Add hidden indiecafé</Title>
           <AddForm onSubmit={addCafeHandler}>
             <NameInput
+              ref={inputRef}
               value={newName}
               placeholder='café name'
               type='text'
@@ -67,6 +97,7 @@ const AddCafe = () => {
               required
               onChange={(event) => setNewWebSite(event.target.value)}
             />
+
             <SubmitButton>Submit</SubmitButton>
           </AddForm>
         </ContentWrapper>

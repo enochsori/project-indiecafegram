@@ -209,19 +209,26 @@ const updateProfile = async (req, res) => {
 
 // Add new cafe
 const addCafé = async (req, res) => {
-  const { name, phone, webSite, address } = req.body;
+  const { name, phone, webSite, address, _id } = req.body;
   const randomNumber = Math.floor(Math.random() * 41 + 1);
   const imgSrc = `/images/0${randomNumber}.jpeg`;
+
+  const newValue = { name, _id, phone, imgSrc, webSite, address };
+
   try {
     await client.connect();
+    console.log("Connected");
+
     const db = await client.db("indiecafegram");
-    const result = await db
-      .collection("cafes")
-      .insertOne({ name, _id: phone, phone, email, imgSrc, webSite });
+    const result = await db.collection("cafes").insert(newValue);
+    const data = await db.collection("cafes").find({ _id }).toArray();
+
+    client.close();
+    console.log("Disconnected");
 
     console.log(result);
 
-    res.status(200).json({ status: 200, message: "Request completed" });
+    res.status(200).json({ status: 200, message: "Request completed", data });
   } catch (err) {
     res.status(500).json({ status: 500, message: err });
   }

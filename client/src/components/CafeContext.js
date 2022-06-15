@@ -17,6 +17,7 @@ const CafeProvider = ({ children }) => {
   const [geoCodes, setGeoCodes] = useState([]);
   const [center, setCenter] = useState(null);
   const [chatConversation, setChatConverstation] = useState(null);
+  const [newCafe, setNewCafe] = useState(false);
 
   // console.log(cafes);
 
@@ -44,7 +45,7 @@ const CafeProvider = ({ children }) => {
       }
     };
     fetchData();
-  }, [isLoggedIn]);
+  }, [isLoggedIn, newCafe]);
 
   return (
     <CafeContext.Provider
@@ -63,6 +64,7 @@ const CafeProvider = ({ children }) => {
         setCenter,
         chatConversation,
         setChatConverstation,
+        setNewCafe,
       }}
     >
       {children}

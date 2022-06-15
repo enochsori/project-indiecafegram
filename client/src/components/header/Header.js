@@ -183,13 +183,13 @@ const ProfileLable = styled.span`
   font-size: 0.8rem;
   font-weight: bold;
   bottom: -18px;
-  left: 24px;
+  left: 26px;
   color: black;
   opacity: 0;
   transition: all 300ms ease-in;
   &:hover {
     opacity: 1;
-    transform: translateY(-11px);
+    transform: translateY(-9px);
   }
 `;
 const LogoutButton = styled.button`

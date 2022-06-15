@@ -71,7 +71,7 @@ express()
   .patch("/api/edit-profile", updateProfile)
 
   // Add new café
-  .patch("/api/add-cafe", addCafé)
+  .post("/api/add-cafe", addCafé)
 
   // This is our catch all endpoint.
   .get("*", (req, res) => {
