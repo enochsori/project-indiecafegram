@@ -1,10 +1,19 @@
 # project-indiecafegram
 
-###Location based independent cafe social media
+"indiecafegram" is a location based web server for crazy coffee lovers. It offers user the locations of their favorite independent coffee shops, reviews and chat service.
+
+We introduce coffee lovers to a new coffee shop to try and provide a platform for betweent people who has the same tasts to become frineds.
+
+## ☕️ Let's enjoy the best cup of coffee
+
+---
+
+# Structure
 
 ## Client
 
 > react-google-map/api
+>>  using google map api 
 
 > firebase - only authenticatin not database
 
