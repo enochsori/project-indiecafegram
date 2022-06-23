@@ -77,22 +77,22 @@ const Auth = () => {
     }
   };
 
-  const googleLoginHandler = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      // console.log(user.uid);
-      setUserId(user.uid);
+  // const googleLoginHandler = async () => {
+  //   try {
+  //     const provider = new GoogleAuthProvider();
+  //     const result = await signInWithPopup(auth, provider);
+  //     const user = result.user;
+  //     // console.log(user.uid);
+  //     setUserId(user.uid);
 
-      // const idx = user.email.indexOf('@');
-      // const name = user.email.slice(0, idx);
+  //     // const idx = user.email.indexOf('@');
+  //     // const name = user.email.slice(0, idx);
 
-      setNewUser({ name: user.email, email: user.email, _id: user.uid });
-    } catch (err) {
-      setError(err);
-    }
-  };
+  //     setNewUser({ name: user.email, email: user.email, _id: user.uid });
+  //   } catch (err) {
+  //     setError(err);
+  //   }
+  // };
 
   return (
     <Modalwrapper>
@@ -148,7 +148,7 @@ const Auth = () => {
               </SubmitButton>
             </Form>
 
-            <OtherOptionTile>
+            {/* <OtherOptionTile>
               {' '}
               ---------------- or ----------------{' '}
             </OtherOptionTile>
@@ -158,7 +158,7 @@ const Auth = () => {
                 <FcGoogle />
                 <GoogleTitle>Google</GoogleTitle>
               </ViaGoogle>
-            </OtherOptionWrapper>
+            </OtherOptionWrapper> */}
           </LogincontentWrapper>
         </Wrapper>
       </ModalBackground>

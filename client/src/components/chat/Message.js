@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { UserContext } from '../UserContext';
 
 const Message = ({ message }) => {
+  console.log(message);
   const { currentUser } = useContext(UserContext);
   const user = currentUser.name === Object.keys(message)[0] ? true : false;
 
@@ -16,7 +17,7 @@ const Message = ({ message }) => {
           {Object.values(message)[0]}
         </MessageText>
       </MessageTop>
-      <MessageTime>i hour ago</MessageTime>
+      <MessageTime>{message.createdAt}</MessageTime>
     </Wrapper>
   );
 };
@@ -34,10 +35,6 @@ const MessageTop = styled.div`
   display: flex;
   align-items: center;
 `;
-// const r = Math.floor(Math.random() * 255);
-// const g = Math.floor(Math.random() * 255);
-// const b = Math.floor(Math.random() * 255);
-// const a = Math.floor(Math.random());
 
 const MessageImg = styled.div`
   width: 40px;

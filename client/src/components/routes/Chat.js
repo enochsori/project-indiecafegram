@@ -63,6 +63,7 @@ const Chat = () => {
         try {
           const res = await fetch(`/api/conversations/${_id}`);
           const { data } = await res.json();
+          console.log(data);
           data && setMessages(data[0].text);
         } catch (err) {
           console.log(err);
@@ -75,7 +76,10 @@ const Chat = () => {
   // Submit new Chat to BE and database
   const submitHandler = async (event) => {
     event.preventDefault();
-    const now = new Date();
+    const now = new Date(+new Date() + 3240 * 10000)
+      .toISOString()
+      .replace('T', ' ')
+      .replace(/\..*/, '');
     if (user) {
       try {
         const res = await fetch('/api/add-chat-message', {
