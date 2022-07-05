@@ -15,7 +15,7 @@ We introduce coffee lovers to a new coffee shop to try and provide a platform fo
 > react-google-map/api
 >>  using google map api 
 
-> firebase - only authenticatin not database
+> firebase - only authentication not database
 
 ## Server
 
