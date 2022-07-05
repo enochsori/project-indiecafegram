@@ -19,6 +19,7 @@ We introduce coffee lovers to a new coffee shop to try and provide a platform fo
 
 ## Server
 
+> NodeJs, Express
 > mongoDB
 
 ## Log in or Sign up
