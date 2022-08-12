@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# project-indiecafegram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="client/public/pageIamges/mainpage.png" />
 
-## Available Scripts
+"indiecafegram" is a location based web service for crazy coffee lovers. It offers user the locations of their favorite independent coffee shops, reviews and chat service.
 
-In the project directory, you can run:
+We introduce coffee lovers to a new coffee shop to try and provide a platform for betweent people who has the same tasts to become frineds.
 
-### `npm start`
+## ☕️ Let's enjoy the best cup of coffee
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Structure
 
-### `npm test`
+## Client
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> react-google-map/api
+>
+> > using google map api
 
-### `npm run build`
+> firebase - only authenticatin not database
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> mongoDB
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Log in or Sign up
 
-### `npm run eject`
+<img src="client/public/pageIamges/loginpage.png" />
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> firebase authenticatoin
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> mongoDB to save user info
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Home - google map, sidebar with cafe list
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> Map with markers of coffee shop locations
 
-## Learn More
+> Café list in sidebar
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> Café detail page & Café reviews
+> <img src="client/public/pageIamges/cafedetail-popup.png" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Add hidden indie café
+> <img src="client/public/pageIamges/addCafepage.png" />
 
-### Code Splitting
+## Group Chat and make a friend in your favorite cafe
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="client/public/pageIamges/chatpage.png" />
 
-### Analyzing the Bundle Size
+> Group chat list in Sidebar
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> Chat box
 
-### Making a Progressive Web App
+## Profile and Edit profile
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<img src="client/public/pageIamges/profilepage.png" />
 
-### Advanced Configuration
+## Log out
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## on the next version..
 
-### Deployment
+> socket.io
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> improve google maps utilization
 
-### `npm run build` fails to minify
+### - upgrage user profile
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### avatar and more info
+
+### - implement more APIs
+
+#### weather, instagram, youtube, etc..
